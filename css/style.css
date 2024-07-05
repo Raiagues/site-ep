@@ -155,7 +155,7 @@ section{
 }
 
 .inicio {
-  background-image: url('/images/init/black.png');
+  background-image: url('../images/init/black.png');
   background-size: cover;
   background-repeat: no-repeat; 
   display: flex;
@@ -323,7 +323,7 @@ section{
 }
 
 .sobre , .revista, .projetos, .contato {
-  background-image: url('/images/init/white.png');
+  background-image: url('../images/init/white.png');
   background-size: cover;
   background-repeat: no-repeat; 
 }
