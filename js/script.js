@@ -16,23 +16,24 @@ document.querySelectorAll('.btn-2').forEach(button => {
     button.addEventListener('click', function(event) {
         event.preventDefault();
         
+        // Remove active class from all buttons
+        document.querySelectorAll('.btn-2').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        // Add active class to the clicked button
+        this.classList.add('active');
+        
         // Hide all other content sections
         document.querySelectorAll('.hidden-content').forEach(content => {
-            if (content !== document.getElementById(this.getAttribute('data-target'))) {
-                content.style.display = 'none';
-            }
+            content.classList.remove('show');
         });
-
-        // Toggle the clicked button's content
+        
+        // Show the corresponding content section
         const target = document.getElementById(this.getAttribute('data-target'));
-        if (target.style.display === 'none' || target.style.display === '') {
-            target.style.display = 'block';
-        } else {
-            target.style.display = 'none';
-        }
+        target.classList.add('show');
     });
 });
-
  
 
 function toggleContent(targetId) {
