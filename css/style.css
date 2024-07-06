@@ -69,6 +69,12 @@ section{
     overflow: hidden;
     text-transform: uppercase;  
     font-weight: 700; 
+    margin-right: 20px;  
+    margin-bottom: 10px;  
+}
+
+.btn:last-child {
+  margin-right: 0;  
 }
 
 .btn-3 {
@@ -322,7 +328,7 @@ section{
     gap:1.5rem;
 }
 
-.sobre , .revista, .projetos, .contato {
+.sobre , .revista, .projetos, .contato, .quem-somos {
   background-image: url('../images/init/white.png');
   background-size: cover;
   background-repeat: no-repeat; 
@@ -350,26 +356,61 @@ section{
 .normal-image {
   max-width: 100%;
   height: auto;
-  /* display: none; */
-
 }
 
 .sobre .row .content{
+  flex:1 1 45rem;
+}
+
+
+.quem-somos .content{
     flex:1 1 45rem;
 }
 
-.sobre .row .content p {
+.quem-somos ul {
   font-size: 1.5rem;
   color: #0A1128;
   line-height: 1.8;
   margin-bottom: 2rem; 
 }
 
-.sobre .row .content h4 {
+.quem-somos h2 {
   font-size: 1.5rem;
   color: #0A1128;
   line-height: 1.8;
 }
+
+p {
+  font-size: 1.5rem;
+  color: #0A1128;
+  line-height: 1.8;
+  margin-bottom: 2rem; 
+}
+
+h4 {
+  font-size: 1.5rem;
+  color: #0A1128;
+  line-height: 1.8;
+}
+
+.quem-somos .heading {
+  color: #17203d;
+  font-size: 3.5rem;
+  text-transform: uppercase; 
+  line-height: 1.2;
+  padding-top: 10rem;
+}
+
+.quem-somos .content .title {
+  font-size:3rem;
+  color: white;  
+  background-color: #0177B5; 
+  padding: 5px 10px; 
+  display: inline-block;  
+  margin-bottom: 40px; 
+}
+
+
 
 
 .sobre .heading {
@@ -395,7 +436,6 @@ section{
   padding: 5px 10px; 
   display: inline-block;  
   margin-bottom: 40px; 
-  
 }
 
  
