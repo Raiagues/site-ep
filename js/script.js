@@ -46,3 +46,17 @@ function toggleContent(targetId) {
         targetContent.style.display = 'none';
     }
 }
+
+document.querySelectorAll('.btn-parcerias').forEach(button => {
+    button.addEventListener('click', function() {
+        const targetId = this.getAttribute('data-target');
+        const content = document.getElementById(targetId);
+        if (content.style.display === 'none' || content.style.display === '') {
+            content.style.display = 'block';
+        } else {
+            content.style.display = 'none';
+        }
+    });
+});
+
+

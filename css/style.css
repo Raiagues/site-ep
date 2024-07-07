@@ -114,12 +114,21 @@ section{
 }
 
 .btn-projects {
-  color: #0A1128; /* Default text color */
-  transition: color 0.3s ease; /* Smooth transition for color change */
+  color: #0A1128;  
+  transition: color 0.3s ease;  
 }
 
 .btn-projects:hover {
-  color:  var(--main-color); /* Text color on hover */
+  color:  var(--main-color);  
+}
+
+.btn-parcerias {
+  color: var(--main-color);  
+  transition: color 0.3s ease;  
+}
+
+.btn-parcerias:hover {
+  color:  var(--bg);  
 }
 
 
