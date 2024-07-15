@@ -58,5 +58,3 @@ document.querySelectorAll('.btn-parcerias').forEach(button => {
         }
     });
 });
-
-
