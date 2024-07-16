@@ -1,8 +1,8 @@
 const teamMembers = [
   {
     name: "Nicole Lemons",
-    title: "Presidente",
-    description: "test",
+    title: "Ex Presidente",
+          description: "Estudante do 10º semestre de Engenharia Aeroespacial na UFSM e técnica em Química pelo IFSUL. Co-fundadora e presidente da EP Aero em 2022. Realizou iniciação científica no ITA na área de falhas de comunicação de satélites em formação em voo e no IMPA em abordagens analíticas de equações diferenciais aplicadas a vibrações mecânicas. Possui ampla experiência em cálculos analíticos, graças às participações e premiações de diversas olimpíadas matemáticas. Além disso, possui experiência com projetos conceituais de aeronaves por meio de atividades acadêmicas.",
     avatarUrl: "../../images/team/members/1",
     socialLinks: [
       { href: "https://www.linkedin.com/in/nicole-lemons-718b8a190/", imgSrc: "../../images/team/icons/linkedin.svg" },
@@ -12,8 +12,8 @@ const teamMembers = [
   },
   {
     name: "Emilly Rodrigues",
-    title: "Vice Presidente",
-    description: "test",
+    title: "Ex Vice Presidente",
+    description: "Estudante do 8º semestre de Engenharia Aeroespacial na UFSM, com duplo diploma em Sistemas Embarcados pelo INP Grenoble, na França, com financiamento da bolsa BRAFITEC. Foi co-fundadora e vice presidente da EP Aero no ano de 2022. Realizou iniciação científica no ITA na área de técnicas de filtragem para determinação de órbita de satélites em formação em voo. Possui uma vasta experiência adquirida por meio de estágios e projetos acadêmicos com controle de satélites, programação em microcontroladores e integração de hardware e software.",
     avatarUrl: "../../images/team/members/2",
     socialLinks: [
       { href: "https://www.linkedin.com/in/emilly-raiane-/", imgSrc: "../../images/team/icons/linkedin.svg" },
@@ -23,8 +23,8 @@ const teamMembers = [
   },
   {
     name: "Julia Kerkoff",
-    title: "Diretora de Marketing",
-    description: "test",
+    title: "Ex Diretora de Marketing",
+    description: "Estudante do 8º semestre de Engenharia Aeroespacial na UFSM, com duplo diploma em Sistemas Embarcados pelo INP Grenoble, na França, com financiamento da bolsa BRAFITEC, além de formação técnica em administração pelo IFES. Foi diretora de marketing da EP Aero no ano de 2022 e 2023. Realizou diversas atividades na área de projeto aeronáutico, com foco em elétrica e programação, e possui experiência em tratamento de dados através de atividades de pesquisa.",
     avatarUrl: "../../images/team/members/3",
     socialLinks: [
       { href: "https://www.linkedin.com/in/julia-kerkoff/", imgSrc: "../../images/team/icons/linkedin.svg" },
@@ -33,24 +33,38 @@ const teamMembers = [
     ]
   },
   {
-    name: "Júllia Azeredo",
-    title: "Diretora de Relações Externas",
-    description: "test",
+    name: "Érica Alves",
+    title: "Presidente",
+    description: "Estudante do 3º semestre de Engenharia Aeroespacial na UFSM. Atual presidente da EP Aero, além de principal responsável pelo projeto de minifoguetes de baixo custo. Possui vasta experiência com gestão de projetos e de pessoas, captação de recursos e estabelecimento de parcerias, adquirida por meio dos cargos de liderança na EP Aero e em atividades acadêmicas.",
     avatarUrl: "../../images/team/members/4",
     socialLinks: [
-      { href: "https://www.linkedin.com/in/j%C3%BAllia-azeredo-7861311b8/", imgSrc: "../../images/team/icons/linkedin.svg" },
+      { href: "https://www.linkedin.com/in/%C3%A9rica-m-alves/", imgSrc: "../../images/team/icons/linkedin.svg" },
       { href: "", imgSrc: "../../images/team/icons/github.svg" },
-      { href: "http://lattes.cnpq.br/6797412403277384", imgSrc: "../../images/team/icons/lattes.svg" }
+      { href: "", imgSrc: "../../images/team/icons/lattes.svg" }
     ]
-  }
+  },
+  {
+    name: "Kays Abur",
+    title: "Vice Presidente",
+    description: "Estudante do 8º semestre de Engenharia Aeroespacial na UFSM. Atual vice presidente da EP Aero. Possui experiência na área de mecânica dos fluidos e aerodinâmica por meio de projeto de pesquisa em analise biomimética em perfis aerodinâmicos pelo GMFA, além de experiência prática como membro da equipe de competição Fórmula UFSM no subsistema de aerodinâmica. ",
+    avatarUrl: "../../images/team/members/5",
+    socialLinks: [
+      { href: "https://www.linkedin.com/in/kaysabur/", imgSrc: "../../images/team/icons/linkedin.svg" },
+      { href: "", imgSrc: "../../images/team/icons/github.svg" },
+      { href: "http://lattes.cnpq.br/0970370846753478", imgSrc: "../../images/team/icons/lattes.svg" }
+    ]
+  } 
 ];
 
-function createAvatarCSS(member, index) {
+function createAvatarCSS(member) {
+  // Extract the index from the avatarUrl
+  const index = member.avatarUrl.match(/(\d+)$/)[0];
+  
   const style = document.createElement('style');
   style.innerHTML = `
     .card-avatar${index} {
       --size: 60px;
-      background:  url(../../images/team/members/${index}.jpg);
+      background: url(${member.avatarUrl}.jpg);
       width: var(--size);
       height: var(--size);
       border-radius: 50%;
@@ -61,8 +75,14 @@ function createAvatarCSS(member, index) {
   document.head.appendChild(style);
 }
 
-function createCard(member, index) {
-  createAvatarCSS(member, index);
+function createCard(member) {
+  createAvatarCSS(member);
+  // TODO: implementar uma forma de comprimir a imagem pra 9kb e a resolução em pixel pra 60x60 
+  // Atualmente isso é feito manualmente por https://www.simpleimageresizer.com/resize-image-to-10-kb
+
+  
+  // Extract the index from the avatarUrl
+  const index = member.avatarUrl.match(/(\d+)$/)[0];
   
   const card = document.createElement('div');
   card.className = 'card';
@@ -86,14 +106,14 @@ function createCard(member, index) {
   const description = document.createElement('p');
   description.textContent = member.description;
   description.className = 'card-description';
-  description.style.display = 'none';
+  // description.style.display = 'none';
   cardInfo.appendChild(description);
 
   const cvLink = document.createElement('a');
   cvLink.href = member.cvLink;
-  cvLink.textContent = 'Ver CV';
-  cvLink.className = 'card-cv-link';
-  cvLink.style.display = 'none'; 
+  cvLink.textContent = 'Currículo';
+  cvLink.className = 'btn-3 card-cv-link'
+  // cvLink.style.display = 'none'; 
   cardInfo.appendChild(cvLink);
 
   const socialList = document.createElement('ul');
@@ -126,19 +146,19 @@ function createCard(member, index) {
   card.appendChild(cardInfo);
   card.appendChild(socialList);
 
-  card.addEventListener('mouseover', () => {
-    if (member.description) {
-      card.querySelector('.card-description').style.display = 'block';
-      card.querySelector('.card-cv-link').style.display = 'block';
-    }
-  });
+  // card.addEventListener('mouseover', () => {
+  //   if (member.description) {
+  //     card.querySelector('.card-description').style.display = 'block';
+  //     card.querySelector('.card-cv-link').style.display = 'block';
+  //   }
+  // });
 
-  card.addEventListener('mouseout', () => {
-  if (member.description) {
-    card.querySelector('.card-description').style.display = 'none';
-    card.querySelector('.card-cv-link').style.display = 'none';
-  }
-  });
+  // card.addEventListener('mouseout', () => {
+  // if (member.description) {
+  //   card.querySelector('.card-description').style.display = 'none';
+  //   card.querySelector('.card-cv-link').style.display = 'none';
+  // }
+  // });
 
   return card;
 }
