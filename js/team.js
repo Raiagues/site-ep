@@ -2,7 +2,7 @@ const teamMembers = [
   {
     name: "Nicole Lemons",
     title: "Ex Presidente",
-          description: "Estudante do 10º semestre de Engenharia Aeroespacial na UFSM e técnica em Química pelo IFSUL. Co-fundadora e presidente da EP Aero em 2022. Realizou iniciação científica no ITA na área de falhas de comunicação de satélites em formação em voo e no IMPA em abordagens analíticas de equações diferenciais aplicadas a vibrações mecânicas. Possui ampla experiência em cálculos analíticos, graças às participações e premiações de diversas olimpíadas matemáticas. Além disso, possui experiência com projetos conceituais de aeronaves por meio de atividades acadêmicas.",
+    description: "Estudante do 10º semestre de Engenharia Aeroespacial na UFSM e técnica em Química pelo IFSUL. Co-fundadora e presidente da EP Aero em 2022. Realizou iniciação científica no ITA na área de falhas de comunicação de satélites em formação em voo e no IMPA em abordagens analíticas de equações diferenciais aplicadas a vibrações mecânicas. Possui ampla experiência em cálculos analíticos, graças às participações e premiações de diversas olimpíadas matemáticas. Além disso, possui experiência com projetos conceituais de aeronaves por meio de atividades acadêmicas.",
     avatarUrl: "../../images/team/members/1",
     socialLinks: [
       { href: "https://www.linkedin.com/in/nicole-lemons-718b8a190/", imgSrc: "../../images/team/icons/linkedin.svg" },
@@ -53,7 +53,150 @@ const teamMembers = [
       { href: "", imgSrc: "../../images/team/icons/github.svg" },
       { href: "http://lattes.cnpq.br/0970370846753478", imgSrc: "../../images/team/icons/lattes.svg" }
     ]
-  } 
+  },
+  {
+    name: "José de Leon",
+    title: "ADICIONAR",
+    description: "ADICIONAR",
+    avatarUrl: "../../images/team/members/1",
+    socialLinks: [
+      { href: "", imgSrc: "../../images/team/icons/linkedin.svg" },
+      { href: "", imgSrc: "../../images/team/icons/github.svg" },
+      { href: "", imgSrc: "../../images/team/icons/lattes.svg" }
+    ]
+  },
+  {
+    name: "Fabio Jr",
+    title: "ADICIONAR",
+    description: "ADICIONAR",
+    avatarUrl: "../../images/team/members/1",
+    socialLinks: [
+      { href: "", imgSrc: "../../images/team/icons/linkedin.svg" },
+      { href: "", imgSrc: "../../images/team/icons/github.svg" },
+      { href: "", imgSrc: "../../images/team/icons/lattes.svg" }
+    ]
+  },
+  {
+    name: "Thales Hedlund",
+    title: "ADICIONAR",
+    description: "ADICIONAR",
+    avatarUrl: "../../images/team/members/1",
+    socialLinks: [
+      { href: "", imgSrc: "../../images/team/icons/linkedin.svg" },
+      { href: "", imgSrc: "../../images/team/icons/github.svg" },
+      { href: "", imgSrc: "../../images/team/icons/lattes.svg" }
+    ]
+  },
+  {
+    name: "Carolina Barbara",
+    title: "ADICIONAR",
+    description: "ADICIONAR",
+    avatarUrl: "../../images/team/members/1",
+    socialLinks: [
+      { href: "", imgSrc: "../../images/team/icons/linkedin.svg" },
+      { href: "", imgSrc: "../../images/team/icons/github.svg" },
+      { href: "", imgSrc: "../../images/team/icons/lattes.svg" }
+    ]
+  },
+  {
+    name: "Felipe Vogel",
+    title: "ADICIONAR",
+    description: "ADICIONAR",
+    avatarUrl: "../../images/team/members/1",
+    socialLinks: [
+      { href: "", imgSrc: "../../images/team/icons/linkedin.svg" },
+      { href: "", imgSrc: "../../images/team/icons/github.svg" },
+      { href: "", imgSrc: "../../images/team/icons/lattes.svg" }
+    ]
+  },
+  {
+    name: "Guilherme Anthony",
+    title: "ADICIONAR",
+    description: "ADICIONAR",
+    avatarUrl: "../../images/team/members/1",
+    socialLinks: [
+      { href: "", imgSrc: "../../images/team/icons/linkedin.svg" },
+      { href: "", imgSrc: "../../images/team/icons/github.svg" },
+      { href: "", imgSrc: "../../images/team/icons/lattes.svg" }
+    ]
+  },
+  {
+    name: "José Ferreira",
+    title: "ADICIONAR",
+    description: "ADICIONAR",
+    avatarUrl: "../../images/team/members/1",
+    socialLinks: [
+      { href: "", imgSrc: "../../images/team/icons/linkedin.svg" },
+      { href: "", imgSrc: "../../images/team/icons/github.svg" },
+      { href: "", imgSrc: "../../images/team/icons/lattes.svg" }
+    ]
+  },
+  {
+    name: "José Vieira",
+    title: "ADICIONAR",
+    description: "ADICIONAR",
+    avatarUrl: "../../images/team/members/1",
+    socialLinks: [
+      { href: "", imgSrc: "../../images/team/icons/linkedin.svg" },
+      { href: "", imgSrc: "../../images/team/icons/github.svg" },
+      { href: "", imgSrc: "../../images/team/icons/lattes.svg" }
+    ]
+  },
+  {
+    name: "Kassio Kochann",
+    title: "ADICIONAR",
+    description: "ADICIONAR",
+    avatarUrl: "../../images/team/members/1",
+    socialLinks: [
+      { href: "", imgSrc: "../../images/team/icons/linkedin.svg" },
+      { href: "", imgSrc: "../../images/team/icons/github.svg" },
+      { href: "", imgSrc: "../../images/team/icons/lattes.svg" }
+    ]
+  },
+  {
+    name: "Maria Teixeira",
+    title: "ADICIONAR",
+    description: "ADICIONAR",
+    avatarUrl: "../../images/team/members/1",
+    socialLinks: [
+      { href: "", imgSrc: "../../images/team/icons/linkedin.svg" },
+      { href: "", imgSrc: "../../images/team/icons/github.svg" },
+      { href: "", imgSrc: "../../images/team/icons/lattes.svg" }
+    ]
+  },
+  {
+    name: "Matheus Klement",
+    title: "ADICIONAR",
+    description: "ADICIONAR",
+    avatarUrl: "../../images/team/members/1",
+    socialLinks: [
+      { href: "", imgSrc: "../../images/team/icons/linkedin.svg" },
+      { href: "", imgSrc: "../../images/team/icons/github.svg" },
+      { href: "", imgSrc: "../../images/team/icons/lattes.svg" }
+    ]
+  },
+  {
+    name: "Micheli Kutzner",
+    title: "ADICIONAR",
+    description: "ADICIONAR",
+    avatarUrl: "../../images/team/members/1",
+    socialLinks: [
+      { href: "", imgSrc: "../../images/team/icons/linkedin.svg" },
+      { href: "", imgSrc: "../../images/team/icons/github.svg" },
+      { href: "", imgSrc: "../../images/team/icons/lattes.svg" }
+    ]
+  },
+  {
+    name: "Valéria Stochero",
+    title: "ADICIONAR",
+    description: "ADICIONAR",
+    avatarUrl: "../../images/team/members/1",
+    socialLinks: [
+      { href: "", imgSrc: "../../images/team/icons/linkedin.svg" },
+      { href: "", imgSrc: "../../images/team/icons/github.svg" },
+      { href: "", imgSrc: "../../images/team/icons/lattes.svg" }
+    ]
+  }
 ];
 
 function createAvatarCSS(member) {
@@ -163,35 +306,97 @@ function createCard(member) {
   return card;
 }
 
+
 function renderCards() {
   const container = document.getElementById('cards-container');
   
-  // Create staff and members divs
-  const staffDiv = document.createElement('div');
-  staffDiv.className = 'staff';
+  // Create current members and ex members divs
+  const currentLeadersDiv = document.createElement('div');
+  currentLeadersDiv.className = 'current-staff';
+  const currentMembersDiv = document.createElement('div');
+  currentMembersDiv.className = 'current-members';
+  currentMembersDiv.style.display = 'none'; 
 
-  const membersDiv = document.createElement('div');
-  membersDiv.className = 'members';
+  const exLeadersDiv = document.createElement('div');
+  exLeadersDiv.className = 'ex-staff';
+  const exMembersDiv = document.createElement('div');
+  exMembersDiv.className = 'ex-members';
+  exMembersDiv.style.display = 'none'; 
 
-  // Separate leaders and members
-  const leaders = teamMembers.filter(member => member.title.toLowerCase() === 'presidente' || member.title.toLowerCase() === 'vice presidente');
-  const members = teamMembers.filter(member => member.title.toLowerCase() !== 'presidente' && member.title.toLowerCase() !== 'vice presidente');
+  // Get current members and staffs (without 'Ex' in the title) and ex members and staffs
+  const currentMembers = teamMembers.filter(member => (!member.title.toLowerCase().includes('ex') && member.title.toLowerCase() !== 'presidente' && member.title.toLowerCase() !== 'vice presidente'));
+  const currentLeaders = teamMembers.filter(member => (!member.title.toLowerCase().includes('ex')) && (member.title.toLowerCase() === 'presidente' || member.title.toLowerCase() === 'vice presidente'));
 
-  // Add leaders to the staff div
-  leaders.forEach((member, index) => {
+  const exMembers = teamMembers.filter(member => (member.title.toLowerCase().includes('ex') && member.title.toLowerCase() !== 'ex presidente' && member.title.toLowerCase() !== 'ex vice presidente'));
+  const exLeaders = teamMembers.filter(member => (member.title.toLowerCase().includes('ex')) && (member.title.toLowerCase() === 'ex presidente' || member.title.toLowerCase() === 'ex vice presidente'));
+ 
+  // Add current members to the current members div
+  currentLeaders.forEach((member, index) => {
     const card = createCard(member, index + 1);
-    staffDiv.appendChild(card);
+    currentLeadersDiv.appendChild(card);
+  });
+  currentMembers.forEach((member, index) => {
+    const card = createCard(member, currentLeaders.length + index + 1);
+    currentMembersDiv.appendChild(card);
+  });
+   
+  // Add ex members to the ex members div
+  exLeaders.forEach((member, index) => {
+    const card = createCard(member, index + 1);
+    exLeadersDiv.appendChild(card);
+  });
+  exMembers.forEach((member, index) => {
+    const card = createCard(member, exLeaders.length + index + 1);
+    exMembersDiv.appendChild(card);
   });
 
-  // Add members to the members div
-  members.forEach((member, index) => {
-    const card = createCard(member, leaders.length + index + 1);
-    membersDiv.appendChild(card);
+  const currentMembersHeading = document.createElement('h1');
+  currentMembersHeading.textContent = 'Equipe Atual';
+  currentMembersHeading.className = 'heading';
+
+  const exMembersHeading = document.createElement('h1');
+  exMembersHeading.textContent = 'Membros Antigos';
+  exMembersHeading.className = 'heading';
+
+  container.appendChild(currentMembersHeading);
+  container.appendChild(currentLeadersDiv);
+  container.appendChild(currentMembersDiv);
+
+  const seeMoreButtonCurrent = document.createElement('button');
+  seeMoreButtonCurrent.textContent = 'Veja mais';
+  seeMoreButtonCurrent.className = 'see-more-button';
+  seeMoreButtonCurrent.addEventListener('click', () => {
+    if (currentMembersDiv.style.display === 'none') {
+      currentMembersDiv.style.display = 'block';
+      currentMembersDiv.style.display = 'grid';   
+      seeMoreButtonCurrent.textContent = 'Veja menos';
+    } else {
+      currentMembersDiv.style.display = 'none';
+      seeMoreButtonCurrent.textContent = 'Veja mais';
+    }
   });
 
-  // Append staff and members divs to the container
-  container.appendChild(staffDiv);
-  container.appendChild(membersDiv);
+  container.appendChild(seeMoreButtonCurrent);
+
+  container.appendChild(exMembersHeading);
+  container.appendChild(exLeadersDiv);
+  container.appendChild(exMembersDiv);
+
+  const seeMoreButtonEx = document.createElement('button');
+  seeMoreButtonEx.textContent = 'Veja mais';
+  seeMoreButtonEx.className = 'see-more-button';
+  seeMoreButtonEx.addEventListener('click', () => {
+    if (exMembersDiv.style.display === 'none') {
+      exMembersDiv.style.display = 'block';
+      exMembersDiv.style.display = 'grid';   
+      seeMoreButtonEx.textContent = 'Veja menos';
+    } else {
+      exMembersDiv.style.display = 'none';
+      seeMoreButtonEx.textContent = 'Veja mais';
+    }
+  });
+
+  container.appendChild(seeMoreButtonEx);
 }
 
 document.addEventListener('DOMContentLoaded', renderCards);

@@ -192,7 +192,7 @@ section{
 }
 
 
-.btn::before, .btn-2::before, .btn-3::before{
+.btn::before, .btn-2::before, .btn-3::before, .see-more-button::before{
     content: '';
     position: absolute;
     top: 0; left: 0;
@@ -203,7 +203,7 @@ section{
     transition: .2s ease-out;
 }
 
-.btn:hover::before, .btn-2:hover::before, .btn-3:hover::before{
+.btn:hover::before, .btn-2:hover::before, .btn-3:hover::before, .see-more-button:hover::before{
     left: 0;
     width: 100%;
 }
@@ -406,7 +406,7 @@ section{
     gap:1.5rem;
 }
 
-.sobre , .revista, .projetos, .contato, .quem-somos {
+.sobre , .revista, .projetos, .contato, .quem-somos, .equipe, .selecao {
   background-image: url('../images/init/white.png');
   background-size: cover;
   background-repeat: no-repeat; 
@@ -1204,17 +1204,44 @@ h4 {
 }
 
 
-
+  #cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   .equipe .staff,
-  .equipe .members {
+  .equipe .members, 
+  .equipe .current-members,
+  .equipe .ex-members, 
+  .equipe .current-staff, 
+  .equipe .ex-staff {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
       gap: 1.5rem;
       margin-bottom: 2rem;  
   }
 
+  .see-more-button {
+    justify-content: center;
+    align-items: center;
+      cursor: pointer; 
+      margin: 1rem 1rem;
+      display: block;
+      padding: .6rem .6rem;
+      font-size: 1.3rem;
+      color: #ffffff;
+      background: var(--main-color);
+      box-shadow: var(--box-shadow);
+      position: relative;
+      z-index: 0;
+      text-transform: uppercase;  
+      font-weight: 700; 
+  }
+
   .card {
+    background-color: white;
+
     text-align: center;
     border: var(--border);
     box-shadow: var(--box-shadow);
