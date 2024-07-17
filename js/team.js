@@ -23,7 +23,7 @@ const teamMembers = [
   },
   {
     name: "Julia Kerkoff",
-    title: "Ex Diretora de Marketing",
+    title: "Ex Diretora de Mídias",
     description: "Estudante do 8º semestre de Engenharia Aeroespacial na UFSM, com duplo diploma em Sistemas Embarcados pelo INP Grenoble, na França, com financiamento da bolsa BRAFITEC, além de formação técnica em administração pelo IFES. Foi diretora de marketing da EP Aero no ano de 2022 e 2023. Realizou diversas atividades na área de projeto aeronáutico, com foco em elétrica e programação, e possui experiência em tratamento de dados através de atividades de pesquisa.",
     avatarUrl: "../../images/team/members/3",
     socialLinks: [

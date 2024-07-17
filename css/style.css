@@ -92,9 +92,7 @@ section{
   font-weight: bold;
 }
 
-.project-section {
-  display: flex;
-}
+
 
 .project-list {
   list-style: disc; 
@@ -122,12 +120,12 @@ section{
   color:  var(--main-color);  
 }
 
-.btn-parcerias {
+.btn-details {
   color: var(--main-color);  
   transition: color 0.3s ease;  
 }
 
-.btn-parcerias:hover {
+.btn-details:hover {
   color:  var(--bg);  
 }
 
@@ -192,7 +190,7 @@ section{
 }
 
 
-.btn::before, .btn-2::before, .btn-3::before, .see-more-button::before{
+.btn::before, .btn-3::before, .see-more-button::before{
     content: '';
     position: absolute;
     top: 0; left: 0;
@@ -203,7 +201,7 @@ section{
     transition: .2s ease-out;
 }
 
-.btn:hover::before, .btn-2:hover::before, .btn-3:hover::before, .see-more-button:hover::before{
+.btn:hover::before, .btn-3:hover::before, .see-more-button:hover::before{
     left: 0;
     width: 100%;
 }
@@ -493,12 +491,13 @@ h4 {
   margin-bottom: 2rem; 
 }
 
-.project-section {
+.project-section, .sector-section {
   margin-bottom: 20px; 
+  display: flex;
 }
 
 
-.equipe .heading {
+.heading {
   color: #17203d;
   font-size: 3.5rem;
   text-transform: uppercase; 

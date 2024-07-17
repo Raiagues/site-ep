@@ -47,7 +47,7 @@ function toggleContent(targetId) {
     }
 }
 
-document.querySelectorAll('.btn-parcerias').forEach(button => {
+document.querySelectorAll('.btn-details').forEach(button => {
     button.addEventListener('click', function() {
         const targetId = this.getAttribute('data-target');
         const content = document.getElementById(targetId);
