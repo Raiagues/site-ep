@@ -238,9 +238,11 @@ function createCard(member) {
 
   const name = document.createElement('h3');
   name.textContent = member.name;
+  name.className = 'card-name';
 
   const title = document.createElement('p');
   title.textContent = member.title;
+  title.className = 'card-title';
 
   cardInfo.appendChild(avatar);
   cardInfo.appendChild(name);
@@ -256,7 +258,7 @@ function createCard(member) {
   cvLink.href = member.cvLink;
   cvLink.textContent = 'Currículo';
   cvLink.className = 'btn-3 card-cv-link'
-  // cvLink.style.display = 'none'; 
+  cvLink.style.display = 'none'; 
   cardInfo.appendChild(cvLink);
 
   const socialList = document.createElement('ul');
@@ -289,19 +291,19 @@ function createCard(member) {
   card.appendChild(cardInfo);
   card.appendChild(socialList);
 
-  // card.addEventListener('mouseover', () => {
-  //   if (member.description) {
-  //     card.querySelector('.card-description').style.display = 'block';
-  //     card.querySelector('.card-cv-link').style.display = 'block';
-  //   }
-  // });
+  card.addEventListener('mouseover', () => {
+    if (member.description) {
+      // card.querySelector('.card-description').style.display = 'block';
+      card.querySelector('.card-cv-link').style.display = 'block';
+    }
+  });
 
-  // card.addEventListener('mouseout', () => {
-  // if (member.description) {
-  //   card.querySelector('.card-description').style.display = 'none';
-  //   card.querySelector('.card-cv-link').style.display = 'none';
-  // }
-  // });
+  card.addEventListener('mouseout', () => {
+  if (member.description) {
+    // card.querySelector('.card-description').style.display = 'none';
+    card.querySelector('.card-cv-link').style.display = 'none';
+  }
+  });
 
   return card;
 }
