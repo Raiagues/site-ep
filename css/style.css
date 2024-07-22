@@ -495,7 +495,7 @@ h4 {
   margin-bottom: 2rem; 
 }
 
-.project-section, .sector-section {
+.project-section, .sector-section, .comp-section {
   margin-bottom: 20px; 
   display: flex;
 }
@@ -1320,6 +1320,20 @@ h4 {
 }
 
 
+ 
+.hidden-content-timeline {
+  display: none;  
+  position: absolute;
+  margin-top: 10px;
+  z-index: 10;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  width: 300px;
+  max-width: 100%;
+}
 
 
 
@@ -1507,7 +1521,7 @@ h4 {
   .inicio .cloud {
     height: 25vh;  
   }
-  .project-section, .sector-section {
+  .project-section, .sector-section, .comp-section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1584,9 +1598,11 @@ h4 {
   .content-display {
     display: none;
   }
-  
+  .timeline-container {
+    position: relative; 
+  }
+   
 }
-
 @media (max-width: 450px) {
   html {
     font-size: 50%;
