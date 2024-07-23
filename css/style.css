@@ -1235,24 +1235,44 @@ h4 {
   margin-right: 10px; 
 }
 
- 
 
 #processo-seletivo .container {
   display: flex;
   padding: 10px 10px;
 }
 
- 
+.comp-section .main-content h3 {
+  font-size: 1.5rem;
+  color: #0A1128;
+  line-height: 1.8;
+  margin-bottom: 2px;   
+ }
+
 .content-display {
   width: 70%;
   padding: 10px;
-  border: 1px solid #ddd;
   margin-left: 10px;
   border-radius: 5px;
 }
  
+
+.circle-text a {
+  color: #0A1128
+}
+
+.circle-text a:hover {
+  color: #0177B5;
+}
  
    
+h2 {
+  font-size: 2rem;
+  color: #0A1128;
+  line-height: 1.8;
+  text-transform: uppercase; 
+  margin-bottom: 2rem;   
+  margin-bottom: 20px; 
+}
 
 .timeline-container {
   display: flex;
@@ -1335,7 +1355,47 @@ h4 {
   max-width: 100%;
 }
 
+.container-workshops {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 20px; /* Space between columns */
+  padding: 20px;
+}
 
+
+
+.cards-container-workshops {
+  display: grid;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}  
+
+
+.card-title-workshop {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.card-description-workshop {
+  font-size: 0.9em;
+  color: #666;
+  margin: 0;
+}
+
+.image-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+
+.image-display img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
 
 @media (max-width: 1500px) {
   .inicio .image img {
@@ -1521,6 +1581,9 @@ h4 {
   .inicio .cloud {
     height: 25vh;  
   }
+
+
+  
   .project-section, .sector-section, .comp-section {
     display: flex;
     flex-direction: column;
@@ -1639,3 +1702,6 @@ h4 {
   } 
 
 }
+
+
+

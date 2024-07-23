@@ -50,9 +50,6 @@ document.addEventListener("DOMContentLoaded", function() {
               targetContent.style.position = "absolute"; // Position below the button
               targetContent.style.top = `${cardRect.bottom - containerRect.top + 20}px`; 
               targetContent.style.left = `${0}px`; // Align with the timeline container
-
-              
-
               lastClickedContent = targetContent;
               lastClickedId = targetId;
             }
@@ -63,4 +60,9 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('click', function() {
+      const imageUrl = this.getAttribute('data-image');
+      document.getElementById('display-image').src = imageUrl;
+  });
+});
