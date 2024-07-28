@@ -60,9 +60,46 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-document.querySelectorAll('.card').forEach(card => {
+
+document.querySelectorAll('.btn-details').forEach(button => {
+  button.addEventListener('click', function(event) {
+      event.stopPropagation(); // Impede a propagação do clique para o card
+
+      const targetId = this.getAttribute('data-target');
+      const content = document.getElementById(targetId);
+      const card = this.closest('.card-workshops');
+      const cardDescription = card.querySelector('.card-description-workshop');
+
+      if (content.style.display === 'none' || content.style.display === '') {
+          cardDescription.style.display = 'none';
+      } else {
+          cardDescription.style.display = 'block';
+      }
+
+      // Atualiza a imagem se necessário
+      // const imageUrl = card.getAttribute('data-image');
+      // if (imageUrl) {
+      //     document.getElementById('display-image').src = imageUrl;
+      // }
+  });
+});
+
+// Código para lidar com o clique no card, se necessário
+function handleCardClick(card) {
+  document.querySelectorAll('.card-workshops').forEach(c => c.classList.remove('selected'));
+  card.classList.add('selected');
+  
+  // const imageUrl = card.getAttribute('data-image');
+  // if (imageUrl) {
+  //     document.getElementById('display-image').src = imageUrl;
+  // }
+  
+}
+
+document.querySelectorAll('.card-workshops').forEach(card => {
   card.addEventListener('click', function() {
-      const imageUrl = this.getAttribute('data-image');
-      document.getElementById('display-image').src = imageUrl;
+      if (!this.classList.contains('selected')) {
+          handleCardClick(this);
+      }
   });
 });
