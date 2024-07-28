@@ -378,6 +378,7 @@ section{
 .projetos .box-container .box{
     text-align: center;
     border: var(--border);
+    background-color: white;
     box-shadow: var(--box-shadow);
     border-radius: .5rem;
     padding: 4rem 2rem;
@@ -387,17 +388,27 @@ section{
     height: 10rem;
 }
 
+.projetos .heading {
+    color: #17203d;
+    font-size: 3.5rem;
+    text-transform: uppercase; 
+    line-height: 1.2;
+    padding-top: 10rem;
+  }
+  
+
 .projetos .box-container .box h3{
     color: #0A1128;
     font-size: 2.5rem;
     padding-top: 1.5rem;
-}
+  }
 
 .projetos .box-container .box p{
     color: #283254;
     font-size: 1.5rem;
-    padding: 1rem 0;
+    padding: 1rem 2rem;
     line-height: 1.8;
+    text-align: justify; 
 }
 
 .sobre .row{
