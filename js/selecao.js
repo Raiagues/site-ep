@@ -76,24 +76,13 @@ document.querySelectorAll('.btn-details').forEach(button => {
           cardDescription.style.display = 'block';
       }
 
-      // Atualiza a imagem se necessário
-      // const imageUrl = card.getAttribute('data-image');
-      // if (imageUrl) {
-      //     document.getElementById('display-image').src = imageUrl;
-      // }
+      
   });
 });
 
-// Código para lidar com o clique no card, se necessário
 function handleCardClick(card) {
   document.querySelectorAll('.card-workshops').forEach(c => c.classList.remove('selected'));
-  card.classList.add('selected');
-  
-  // const imageUrl = card.getAttribute('data-image');
-  // if (imageUrl) {
-  //     document.getElementById('display-image').src = imageUrl;
-  // }
-  
+  card.classList.add('selected'); 
 }
 
 document.querySelectorAll('.card-workshops').forEach(card => {
