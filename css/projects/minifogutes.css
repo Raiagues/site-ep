@@ -149,3 +149,265 @@ button[type="submit"]:hover::before {
 
   display: none; 
  }
+
+
+ 
+ 
+
+.inicio .image img {
+  position: absolute;  
+  width: auto;  
+  height: auto; 
+}
+
+.inicio .image img:nth-of-type(1) {
+  order: 2;
+  width: 400px; 
+  height: auto; 
+  z-index: 2;
+}
+
+
+.inicio .image img:nth-of-type(2) {
+  order: 1;
+  width: 700px; 
+  height: auto;  
+  z-index: 1;
+}
+
+.inicio .image img:nth-of-type(3) {
+  order: 3;
+  z-index: 3;
+  width: 700px;  
+  height: auto;  
+}
+
+.inicio {
+  flex-direction: column;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;  
+}
+
+.project-description .image {
+  display: flex;
+  justify-content: center;  
+  align-items: center;  
+  overflow: hidden;  
+  margin-bottom: -30%;
+  margin-top: -30%;
+}
+
+.project-description .image img {
+  transform: rotate(-90deg);  
+  transform-origin: center;  
+  max-width: 30%; 
+  height: auto; 
+}
+
+.project-origin .image {
+  display: flex;
+  justify-content: center;  
+  align-items: center;  
+  overflow: hidden;  
+  margin-bottom: -15%;
+  margin-top: -15%;
+}
+
+.project-origin .image img {
+  transform: rotate(-90deg);  
+  transform-origin: center;  
+  max-width: 30%; 
+  height: auto; 
+}
+
+
+
+.hidden-content-timeline {
+  display: none;
+}
+
+.circle-item .circle-text a {
+  color: #ffffff; 
+}
+
+.circle-item .circle-text a:hover {
+  color: var(--main-color); 
+  font-weight: bold;
+}
+
+.circle-btn {
+  background: #fff;  
+  border: 3px solid var(--main-color); 
+}
+
+ 
+.timeline-line {  
+  height: 85%;  
+}
+
+.content-display {
+  border-radius: 5px;  
+  padding: 1rem;  
+  margin-top: 1rem; 
+}
+
+ 
+
+.hidden-content-timeline2 {
+  display: none;  
+  position: absolute;
+  margin-top: 10px;
+  z-index: 10;
+  box-sizing: border-box;
+  padding: 10px; 
+  background-color: #fff; 
+  border: 8px solid var(--main-color);    
+  width: 300px;
+  max-width: 100%;
+}
+
+.hidden-content-timeline2 p {
+  color: #062649; 
+}
+
+
+.carousel {
+  position: relative;
+  width: 100%;  
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  display: flex;
+}
+
+.carousel-item {
+  min-width: 20%;
+  margin: 0 10px; 
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: #fff; 
+  border: 8px solid var(--main-color);  
+ }
+
+.carousel-item h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.5rem;
+  color: var(--main-color); 
+}
+
+.carousel-item p {
+  margin: 0;
+  color: #062649; 
+  font-size: 1.0rem;
+
+}
+
+ 
+.carousel-item h3 {
+  margin: 10px 0;
+  color: #062649; 
+  font-weight: bold; 
+}
+
+.carousel-prev, .carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--main-color);
+  background-color: rgba(1, 119, 181, 0.7);  
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, box-shadow 0.3s;
+  z-index: 10;
+}
+
+.carousel-prev {
+  left: 10px;
+}
+
+.carousel-next {
+  right: 10px;
+}
+ 
+
+.carousel-prev:hover, .carousel-next:hover {
+  background-color: rgba(1, 119, 181, 0.9);  
+}
+
+ 
+@media (max-width: 1800px) {
+  .carousel-item {
+    min-width: 20%; 
+  }
+}
+
+@media (max-width: 1700px) {
+  .carousel-item {
+    min-width: 25%; 
+  }
+}
+
+@media (max-width: 1400px) {
+  .carousel-item {
+    min-width: 25%; 
+  }
+}
+
+@media (max-width: 1024px) {
+  .carousel-item {
+    min-width: 40%; 
+  }
+}
+
+ @media (max-width: 940px) {
+  .inicio .image img {
+    max-width: 60%; 
+    height: auto; 
+  }
+
+  .carousel-item {
+    min-width: 45%;  
+  }
+}
+
+@media (max-width: 800px) {
+  .carousel-item {
+    min-width: 50%; 
+  }
+}
+
+@media (max-width: 768px) {
+  .inicio .image img {
+    max-width: 50%; 
+    height: auto; 
+  }
+
+  .carousel-item {
+    min-width: 60%;  
+  }
+}
+
+@media (max-width: 480px) {
+  .inicio .image img {
+    max-width: 80%; 
+    height: auto; 
+  }
+
+  .carousel-item {
+    min-width: 70%;  
+  }
+}

@@ -250,6 +250,8 @@ section{
   gap: 1.5rem;
   padding-top: 12rem;
   position: relative;
+  min-height: 100vh;  
+
 }
  
 
@@ -331,10 +333,11 @@ section{
 .inicio .image img{
   height: auto; 
   width: 30vh;
-  animation: rocket 5s ease-in-out infinite;  
 }
 
-
+.inicio .image img:nth-of-type(1) {
+  animation: rocket 5s ease-in-out infinite; 
+}
 
 
 .inicio .image {
