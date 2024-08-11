@@ -15,11 +15,7 @@ function showFields() {
   }
 }
  
-const testimonials = [
-  { name: "Ana Souza", text: "O projeto foi incrível e muito educativo!" },
-  { name: "João Pereira", text: "Os workshops são muito bem organizados e inspiradores." },
-  { name: "Maria Silva", text: "Excelente iniciativa para engajar jovens na ciência!" }
-];
+
 
 const galleryImages = [
   { src: "../../images/p-1.png", alt: "Descrição da imagem 1" },
@@ -276,3 +272,134 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize the carousel at the closest date
   showSlide(index);
 });
+
+
+const feedbacks = [
+  { name: "Ana Souza", desc: "Aluno 6 ano fundamental", loc: "Escola X", text: "O projeto foi incrível e muito educativo!" },
+  { name: "João Pereira", desc: "Aluno 3 ano ensino médio", loc: "Escola Y", text: "Os workshops são muito bem organizados e inspiradores." },
+  { name: "Maria Silva", desc: "Professor", loc: "Escola Z", text: "Excelente iniciativa para engajar jovens na ciência!" },
+  { name: "Pedro Santos", desc: "Aluno 1 ano fundamental", loc: "Escola A", text: "Aprendi muito e a equipe foi ótima!" },
+  { name: "Luana Costa", desc: "Aluno 2 ano fundamental", loc: "Escola B", text: "Foi uma experiência incrível e educativa." },
+  // Adicione mais itens conforme necessário
+];
+
+const maxVisibleFeedbacks = 4; // Número de feedbacks a mostrar inicialmente
+
+function createFeedback({ name, desc, loc, text }) {
+  const box = document.createElement('div');
+  box.classList.add('box');
+  
+  const userDiv = document.createElement('div');
+  userDiv.classList.add('user');
+  
+  const infoDiv = document.createElement('div');
+  infoDiv.classList.add('info');
+  
+  const h2Element = document.createElement('h2');
+  h2Element.textContent = name;
+  infoDiv.appendChild(h2Element);
+
+  const h3Element = document.createElement('h3');
+  h3Element.textContent = loc;
+  infoDiv.appendChild(h3Element);
+
+  const descElement = document.createElement('p');
+  descElement.textContent = desc;
+  infoDiv.appendChild(descElement);
+  
+  userDiv.appendChild(infoDiv);
+  
+  const textElement = document.createElement('p');
+  textElement.textContent = text;
+  
+  box.appendChild(userDiv);
+  box.appendChild(textElement);
+  
+  return box;
+}
+
+function addFeedback() {
+  const feedbacksContainer = document.getElementById('feedbacks-container');
+  feedbacksContainer.innerHTML = ''; // Limpa o conteúdo existente
+
+  // Adiciona feedbacks até o limite visível
+  feedbacks.slice(0, maxVisibleFeedbacks).forEach(feedback => {
+    const feedbackElement = createFeedback(feedback);
+    feedbacksContainer.appendChild(feedbackElement);
+  });
+
+  // Cria o container dos botões
+  const buttonsContainer = document.getElementById('buttons-container');
+  buttonsContainer.innerHTML = ''; // Limpa o conteúdo existente
+
+  if (feedbacks.length > maxVisibleFeedbacks) {
+    const readMoreButton = document.createElement('button');
+    readMoreButton.textContent = 'Veja Mais';
+    readMoreButton.classList.add('read-more');
+    
+    readMoreButton.addEventListener('click', () => {
+      feedbacks.slice(maxVisibleFeedbacks).forEach(feedback => {
+        const feedbackElement = createFeedback(feedback);
+        feedbacksContainer.appendChild(feedbackElement);
+      });
+
+      readMoreButton.style.display = 'none'; // Esconde o botão após expandir
+
+      const readLessButton = document.createElement('button');
+      readLessButton.textContent = 'Veja Menos';
+      readLessButton.classList.add('read-less');
+      
+      readLessButton.addEventListener('click', () => {
+        // Remove todos os feedbacks adicionais
+        const allFeedbacks = Array.from(feedbacksContainer.querySelectorAll('.box'));
+        allFeedbacks.forEach((feedback, index) => {
+          if (index >= maxVisibleFeedbacks) {
+            feedbacksContainer.removeChild(feedback);
+          }
+        });
+
+        readLessButton.style.display = 'none'; // Esconde o botão após recolher
+        readMoreButton.style.display = 'block'; // Mostra o botão "Read More" novamente
+      });
+
+      buttonsContainer.appendChild(readLessButton);
+    });
+
+    buttonsContainer.appendChild(readMoreButton);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', addFeedback);
+
+
+function sendEmail(event) {
+  event.preventDefault(); // Prevent the form from submitting the default way
+
+  var form = document.getElementById("signup-form");
+  var params = {
+      from_name: form.name.value,
+      email_id: form.email.value,
+      role: form.role.value,
+      school: form.school ? form.school.value : '',
+      institution: form.institution ? form.institution.value : '',
+      message: form.message.value
+  };
+
+  emailjs.send("service_ubzp5kb", "template_pez9ddl", params)
+      .then(function (res) {
+          showPopup("Sua mensagem foi enviada com sucesso!");
+          form.reset(); // Clear all form fields
+      })
+      .catch(function (err) {
+          showPopup("Falha ao enviar a mensagem: " + err.text);
+      });
+}
+
+function showPopup(message) {
+  document.getElementById("popup-message").textContent = message;
+  document.getElementById("popup").style.display = "block";
+}
+
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}

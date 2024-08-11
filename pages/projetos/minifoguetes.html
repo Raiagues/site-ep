@@ -8,11 +8,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/projects/minifogutes.css">
-
     <link rel="website icon" type="png" href="../../images/header/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "9Jstsw2jbP2REvspB",
+        });
+    })();
+    </script>
 <body>
 
     <header class="header">   
@@ -132,54 +141,35 @@
     </section> 
 
 
-    <!-- <section class="gallery">
-        <div class="section-content">
-            <h1 class="heading">Galeria</h1 class="heading">
-            <div id="gallery-container"></div>
-        </div>
-    </section> -->
-
-
-    <!-- <section class="testimonials">
-        <div class="section-content">
-            <h1 class="heading" class="heading">Depoimentos</h1 class="heading">
-            <div id="testimonials-container"></div>
-        </div>
-    </section>
-
-    
+ 
     <section class="partners">
         <div class="section-content">
             <h1 class="heading">Parcerias e Patrocinadores</h1 class="heading">
             <p>Estamos orgulhosos de contar com o apoio de várias instituições e empresas que ajudam a tornar este projeto possível. Agradecemos especialmente às seguintes organizações:</p>
-            <ul>
-                <li><a href="https://www.ufsm.br" class="btn-projects">Universidade Federal de Santa Maria (UFSM)</a></li>
-                <li><a href="https://www.aeb.gov.br" class="btn-projects">Agência Espacial Brasileira (AEB)</a></li>
-                <li><a href="https://www.sab.org.br" class="btn-projects">Sociedade Astronômica Brasileira (SAB)</a></li>
-            </ul>
-        </div>
-    </section>
--->
 
-    <!-- <section class="resources">
-        <div class="section-content">
-            <h1 class="heading">Recursos Educacionais</h1 class="heading">
-            <p>Nosso objetivo é alcançar o maior número possível de pessoas. Por isso, disponibilizamos todos os nossos tutoriais para que você possa implementar a atividade na sua escola ou construir seu próprio foguete. Caso deseje fazer parcerias, entre em contato conosco na seção de <a href="../../index.html#contato"  class="btn-projects">contato</a>.</p>
-            <p>Para aprofundar seus conhecimentos sobre minifoguetes e ciência aeroespacial, confira os seguintes recursos:</p>
-            <ul>
-                <li><a href="https://www.exemplo.com/tutorial-minifoguetes" class="btn-projects">Tutorial Completo de Minifoguetes</a></li>
-                <li><a href="https://www.exemplo.com/artigo-ciencia-aeroespacial" class="btn-projects">Artigo sobre Ciência Aeroespacial</a></li>
-                <li><a href="https://www.exemplo.com/material-didatico" class="btn-projects">Material Didático Adicional</a></li>
-            </ul>
+            <p><a href="javascript:void(0)" class="btn-details" data-target="financiamento-content1">Fundo de Incentivo à Extensão (FIEX)</a></p>
+            <div id="financiamento-content1" class="hidden-content">
+                <p>O FIEX é um projeto da Universidade Federal de Santa Maria (UFSM). Ele seleciona e apoia atividades de extensão que combinam ensino e pesquisa. Essas atividades são feitas nas unidades da UFSM e envolvem a comunidade acadêmica e externa. O projeto recebe recursos da universidade através de Editais.</p>
+                <p>O projeto <a href="link-detalhes" class="btn-projects">Minifoguetes em Escolas Públicas</a> é contemplado pelo financiamento provindo do FIEX.</p>
+                <p>Para mais informações, acesse o <a href="https://www.ufsm.br/app/uploads/sites/346/2024/04/EDITAL-DE-SELECAO-DE-BOLSISTAS-EDITAL-FIEX-2024-GIULIANO-DEMARCO_assinado.pdf" class="btn-projects">link do edital de 2024</a>.</p>
+            </div>
+        
+            <p><a href="javascript:void(0)" class="btn-details" data-target="financiamento-content2">IEEE UFSM Student Branch</a></p>
+            <div id="financiamento-content2" class="hidden-content">
+                <p>O Instituto dos Engenheiros Elerrônicos e Eletricistas (IEEE) é uma das maiores associações técnicas profissionais do mundo, com mais de 421.355 membros em mais de 160 países. Destes, mais de 114.450 são membros Estudantes. </p>
+                <p>Seu propósito principal é incentivar a inovação tecnológica. O Ramo Estudantil do IEEE instituido pel UFSM tem o propósito de promover localmente a pesquisa, inovação e disseminação do conhecimento na universidade e comunidade, ajudando outros a evoluir em suas carreiras profissionais e vidas pessoais.</p>
+                <p>O projeto <a href="link-detalhes" class="btn-projects">Minifoguetes em Escolas Públicas</a> é contemplado pelo financiamento provindo do IEEE UFSM Student Branch.</p>
+            </div>
         </div>
     </section>
 
-    <section class="signup">
+
+    <section class="signup" id="participe">
         <div class="section-content">
-            <h1 class="heading">Inscreva-se</h1 class="heading">
+            <h1 class="heading">Participe do Projeto</h1>
             <p>Interessado em participar dos nossos workshops ou em colaborar com o projeto? Preencha o formulário abaixo:</p>
-
-            <form action="process-signup.php" method="post">
+    
+            <form id="signup-form" onsubmit="sendEmail(event)">
                 <label for="name">Nome:</label>
                 <input type="text" id="name" name="name" required>
                 
@@ -206,49 +196,103 @@
                 <label for="message">Mensagem:</label>
                 <textarea id="message" name="message"></textarea>
                 
-                <button type="submit" value="Submit">Enviar</button>
+                <button type="submit">Enviar</button>
             </form>
         </div>
     </section>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup()">&times;</span>
+            <p id="popup-message">Sua mensagem foi enviada com sucesso!</p>
+        </div>
+    </div>
+
+
+    <section class="testimonials" id="testimonials">
+        <div class="section">
+            <h1 class="heading">Depoimentos</h1>
+            <div id="feedbacks-container" class="feedbacks-container"></div>
+            <div id="buttons-container" class="buttons-container"></div>
+        </div>
+    </section>
+    
  
+    
+
+
+
+   
     <section class="faq">
         <h1 class="heading">Perguntas Frequentes</h1>
         <div class="faq-container">
+
             <div class="faq-item">
-                <a href="javascript:void(0)" class="faq-question" data-target="faq-answer1">Como posso solicitar um workshop para minha escola?</a>
-                <div id="faq-answer1" class="faq-answer">
-                    <p>Você pode preencher o formulário de solicitação na seção de <a href="../../index.html#contato" class="btn-projects">contato</a> e entraremos em contato com você para definir os detalhes.</p>
+                <a href="javascript:void(0)" class="faq-question" data-target="faq-answer5">O que são minifoguetes?</a>
+                <div id="faq-answer5" class="faq-answer">
+                    <p>Minifoguetes (MF) são foguetes de pequeno porte que utilizam propelente sólido. Espaçomodelos (EM) são minifoguetes feitos de materiais não metálicos e dotados de motores comerciais. Eles podem ter até centenas de gramas de massa, geralmente menos de 10 gramas de propelente, e podem atingir centenas de metros de altura.</p>
                 </div>
             </div>
+
+            <div class="faq-item">
+                <a href="javascript:void(0)" class="faq-question" data-target="faq-answer6">Como funcionam os workshops?</a>
+                <div id="faq-answer6" class="faq-answer">
+                    <p>Nosso time realiza um mapeamento das escolas públicas e entra em contato com as instituições mapeadas, oferecendo a atividade. Durante o workshop, contamos com a presença de alunos de graduação em Engenharia Aeroespacial, membros da EP Aero e professores do curso.</p>
+                    <p>A dinâmica inclui a apresentação de conteúdos teóricos, que variam conforme o nível de instrução dos alunos, podendo abordar desde leis de Newton e momento linear até simulações computacionais, ou algo mais simples e lúdico, no caso de atividades com crianças.</p>
+                    <p>Após os conteúdos teóricos, passamos à parte prática, que envolve a montagem do próprio foguete, a escolha dos materiais e a resolução de dúvidas. Em seguida, iniciamos a confecção dos minifoguetes, disponibilizando os materiais para os alunos e auxiliando na construção dos seus próprios foguetes.</p>
+                    <p>Depois da confecção e validação dos minifoguetes, realizamos os lançamentos. Para incentivar o engajamento, promovemos competições com premiações para os melhores colocados, além de outras atividades, como quizzes e brincadeiras.</p>
+                </div>
+            </div>
+
             <div class="faq-item">
                 <a href="javascript:void(0)" class="faq-question" data-target="faq-answer2">Qual é o custo para participar do workshop?</a>
                 <div id="faq-answer2" class="faq-answer">
-                    <p>Os workshops são oferecidos gratuitamente para escolas públicas, com o objetivo de promover a educação em ciências espaciais.</p>
+                    <p>Os workshops são oferecidos gratuitamente. Além disso, também providenciamos premios e lanche para os alunos durante a atividade.</p>
                 </div>
             </div>
+
+            <div class="faq-item">
+                <a href="javascript:void(0)" class="faq-question" data-target="faq-answer1">Como posso solicitar um workshop para minha escola?</a>
+                <div id="faq-answer1" class="faq-answer">
+                    <p>Você pode preencher o formulário "<a href="#participe" class="btn-projects">Participe do Projeto</a>" e entraremos em contato com você para definir os detalhes.</p>
+                </div>
+            </div>
+
             <div class="faq-item">
                 <a href="javascript:void(0)" class="faq-question" data-target="faq-answer3">Os workshops são adaptados para diferentes faixas etárias?</a>
                 <div id="faq-answer3" class="faq-answer">
-                    <p>Sim, adaptamos o conteúdo dos workshops conforme a idade e o nível de conhecimento dos alunos para garantir uma experiência adequada e enriquecedora.</p>
+                    <p>Sim, adaptamos o conteúdo dos workshops conforme a idade e o nível de conhecimento dos alunos. Temos atividades mais práticas e aplicadas para alunos mais velhos e atividades mais lúdicas para alunos mais novos.</p>
                 </div>
             </div>
+
+            <div class="faq-item">
+                <a href="javascript:void(0)" class="faq-question" data-target="faq-answer4">Eu posso ajudar no projeto sem ser professor de uma escola?</a>
+                <div id="faq-answer4" class="faq-answer">
+                    <p>Sim. Atualmente, há três formas de participar do projeto sem ser membro da EP Aero:</p>
+                    <ul>
+                        <li>Sendo professor ou aluno de uma escola e solicitando o projeto para sua instituição.</li>
+                        <li>Sendo aluno ou professor de alguma instituição (como universidade, empresa, ONG, etc) e solicitando para auxiliar em alguma atividade em alguma escola já predefinida pela EP Aero.</li>
+                        <li>Não tendo vínculo com nenhuma instituição, mas querendo auxiliar em alguma atividade em alguma escola já predefinida pela EP Aero.</li>
+                    </ul>
+                    <p>Preenchendo qualquer uma dessas três descrições, você pode se inscrever pelo formulário "<a href="#participe" class="btn-projects">Participe do Projeto</a>", descrevendo na mensagem o tipo de atividade que gostaria de contribuir.</p>
+                </div>
+            </div>
+            
         </div>
     </section>
-     -->
-   <!-- 
-        <div class="project-minifoguetes">
-            <h1 class="heading">O que são minifoguetes</h1 class="heading">
-            <p>Minifoguetes (MF) são foguetes de pequeno porte que utilizam propelente sólido. Espaçomodelos (EM) são minifoguetes feitos de materiais não metálicos e dotados de motores comerciais. Eles podem ter até centenas de gramas de massa, geralmente menos de 10 gramas de propelente, e podem atingir centenas de metros de altura.</p>
-        </div>
 
-        <div class="workshop-process">
-            <h1 class="heading">Como funcionam os workshops</h1 class="heading">
-            <p>Nosso time realiza um mapeamento das escolas públicas e entra em contato com as instituições mapeadas, oferecendo a atividade. Durante o workshop, contamos com a presença de alunos de graduação em Engenharia Aeroespacial, membros da EP Aero e professores do curso.</p>
-            <p>A dinâmica inclui a apresentação de conteúdos teóricos, que variam conforme o nível de instrução dos alunos, podendo abordar desde leis de Newton e momento linear até simulações computacionais, ou algo mais simples e lúdico, no caso de atividades com crianças.</p>
-            <p>Após os conteúdos teóricos, passamos à parte prática, que envolve a montagem do próprio foguete, a escolha dos materiais e a resolução de dúvidas. Em seguida, iniciamos a confecção dos minifoguetes, disponibilizando os materiais para os alunos e auxiliando na construção dos seus próprios foguetes.</p>
-            <p>Depois da confecção e validação dos minifoguetes, realizamos os lançamentos. Para incentivar o engajamento, promovemos competições com premiações para os melhores colocados, além de outras atividades, como quizzes e brincadeiras.</p>
-        </div> -->
-    
+    <section class="resources">
+        <div class="section-content">
+            <h1 class="heading">Recursos Educacionais</h1 class="heading">
+            <p>Nosso objetivo é alcançar o maior número possível de pessoas. Por isso, disponibilizamos todos os nossos tutoriais para que você possa implementar a atividade na sua escola ou construir seu próprio foguete por conta própria.</p>
+            <ul>
+                <li><a href="../../documents/tutorial_minifoguetes.pdf" class="btn-projects">Tutorial Completo de Construção de Minifoguetes</a></li>
+                <li><a href="https://www.ufsm.br/app/uploads/sites/428/2021/09/ElaboraCao-de-um-KIT-Didatico-de-Minifoguetes-de-Baixo-Custo.pdf" class="btn-projects">Elaboração de Um KIT Didático de Minifoguetes de Baixo Custo</a></li>
+                <li><a href="../../documents/tutorial_workshop.pdf" class="btn-projects">Implementação de Workshops de Minifoguetes em Escolas Públicas</a></li>
+            </ul>
+        </div>
+    </section>
+
     <section class="footer">
         <div class="box-container">
             <div class="box">

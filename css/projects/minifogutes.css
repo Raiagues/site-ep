@@ -136,6 +136,7 @@ button[type="submit"]:hover::before {
   font-size: 1.5rem;
   width: 100%;
   text-align: left;
+  
  }
 
 .faq-question:hover {
@@ -146,9 +147,13 @@ button[type="submit"]:hover::before {
 .faq-answer {
   margin-bottom: 15px;
   margin-top: 15px;
-
   display: none; 
  }
+
+
+.faq-answer p {
+  font-size: 1.3rem;
+}
 
 
  
@@ -290,22 +295,22 @@ button[type="submit"]:hover::before {
   display: flex;
 }
 
-.carousel-item {
+.carousel-item , .testimonials .feedbacks-container .box{
   min-width: 20%;
   margin: 0 10px; 
   box-sizing: border-box;
   padding: 20px;
-  background-color: #fff; 
+  background-color: #ffffff; 
   border: 8px solid var(--main-color);  
  }
 
-.carousel-item h2 {
+.carousel-item h2, .testimonials .feedbacks-container .box h2 {
   margin: 0 0 10px 0;
   font-size: 1.5rem;
   color: var(--main-color); 
 }
 
-.carousel-item p {
+.carousel-item p, .testimonials .feedbacks-container .box p {
   margin: 0;
   color: #062649; 
   font-size: 1.0rem;
@@ -313,7 +318,7 @@ button[type="submit"]:hover::before {
 }
 
  
-.carousel-item h3 {
+.carousel-item h3, .testimonials .feedbacks-container .box h3 {
   margin: 10px 0;
   color: #062649; 
   font-weight: bold; 
@@ -348,7 +353,73 @@ button[type="submit"]:hover::before {
   background-color: rgba(1, 119, 181, 0.9);  
 }
 
+
+
+
+.testimonials .feedbacks-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem,1fr));
+  gap: 2rem;
+}
+
+.testimonials .feedbacks-container .box .user{
+  display: flex;
+  align-items: center;
+  padding-bottom: 1rem;
+}
  
+.btn-details {
+  color: #ffffff
+}
+
+.btn-details:hover {
+  color: #1087c7;
+}
+
+.buttons-container {
+  display: flex; 
+  justify-content: center; 
+  align-items: center;  
+  margin-top: 20px;  
+}
+
+.read-more,
+.read-less {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: .6rem .6rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #ffffff;
+  background: var(--main-color);
+  box-shadow: var(--box-shadow);
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  text-transform: uppercase;  
+  font-weight: 700; 
+  margin-right: 20px;  
+  margin-bottom: 10px;  
+}
+
+.read-more::before, .read-less::before{
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: #283254;
+  z-index: -1;
+  transition: .2s ease-out;
+}
+
+.read-more:hover::before, .read-less:hover::before{
+  left: 0;
+  width: 100%;
+}
+
+
+
 @media (max-width: 1800px) {
   .carousel-item {
     min-width: 20%; 
