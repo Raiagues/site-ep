@@ -101,6 +101,8 @@ button[type="submit"] {
   transition: color 0.3s ease, background-color 0.3s ease; 
 }
 
+
+
 button[type="submit"]::before {
   content: '';
   position: absolute;
@@ -155,6 +157,16 @@ button[type="submit"]:hover::before {
   font-size: 1.3rem;
 }
 
+.faq-answer ul {
+  list-style-type: disc;  
+  padding-left: 20px;  
+  margin: 0;
+}
+
+.faq-answer li {
+  margin-bottom: 5px;  
+  font-size: 1.3rem;
+}
 
  
  
@@ -383,6 +395,7 @@ button[type="submit"]:hover::before {
   margin-top: 20px;  
 }
 
+
 .read-more,
 .read-less {
   margin-top: 1rem;
@@ -408,9 +421,14 @@ button[type="submit"]:hover::before {
   top: 0; left: 0;
   height: 100%;
   width: 0%;
-  background-color: #283254;
+  background-color: #ffff;
+
   z-index: -1;
   transition: .2s ease-out;
+}
+
+.read-less:hover, .read-more:hover{
+  color: var(--main-color);
 }
 
 .read-more:hover::before, .read-less:hover::before{
