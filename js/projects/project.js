@@ -91,3 +91,72 @@ function createProject() {
 }
 
 document.addEventListener('DOMContentLoaded', createProject);
+
+
+document.querySelectorAll('.faq-question').forEach((button) => {
+  button.addEventListener('click', () => {
+    const targetId = button.getAttribute('data-target');
+    const targetAnswer = document.getElementById(targetId);
+
+    const isActive = targetAnswer.style.display === 'block';
+
+    document.querySelectorAll('.faq-answer').forEach(answer => {
+      answer.style.display = 'none';
+    });
+
+    if (!isActive) {
+      targetAnswer.style.display = 'block';
+    }
+  });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const cards = document.querySelectorAll(".btn-details-trainee");
+  const contentDisplay = document.getElementById("content-display");
+
+  const defaultContent = document.querySelector(".circle-item .hidden-content-timeline2").innerHTML;
+ 
+  contentDisplay.innerHTML = defaultContent;
+
+  let lastClickedId = null;
+
+  cards.forEach(card => {
+    card.addEventListener("click", function() {
+      const targetId = this.getAttribute("data-target");
+      const targetContent = document.getElementById(targetId);
+
+      if (window.innerWidth >= 500) {
+        if (lastClickedId === targetId) {
+          contentDisplay.innerHTML = defaultContent;
+          lastClickedId = null;
+        } else {
+          if (targetContent) {
+            contentDisplay.innerHTML = targetContent.innerHTML;
+            lastClickedId = targetId;
+          }
+        }
+      } else {
+        if (lastClickedId === targetId) {
+           contentDisplay.innerHTML = defaultContent;
+          lastClickedId = null;
+          targetContent.style.display = "none";
+
+        } else {
+          if (targetContent) {
+            const cardRect = this.getBoundingClientRect();
+            const containerRect = document.querySelector('.timeline-container').getBoundingClientRect();
+            
+            targetContent.style.display = "block";
+            targetContent.style.position = "absolute"; 
+            targetContent.style.top = `${cardRect.bottom - containerRect.top + 20}px`; 
+            targetContent.style.left = `${0}px`; 
+            lastClickedContent = targetContent;
+            lastClickedId = targetId;
+          }
+        }
+      }
+    });
+  });
+});

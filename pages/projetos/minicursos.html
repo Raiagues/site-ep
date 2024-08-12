@@ -7,7 +7,8 @@
     <title>EP Aero - Revista Acadêmica</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/projects/revista.css">
+    <link rel="stylesheet" href="../../css/projects/minicursos.css">
+    <link rel="stylesheet" href="../../css/projects/projects.css">
 
     <link rel="website icon" type="png" href="../../images/logo.png">
 
@@ -32,15 +33,289 @@
         <div id="menu-btn" class="fas fa-bars"></div>
     </header>
 
-    <section class="inicio" id="inicio">
-        <div class="image">
-            <img src="../../images/projects/revista/caca.png" alt=""> 
-            <img src="../../images/projects/revista/title1.png" alt=""> 
-            <img src="../../images/projects/revista/title2.png" alt=""> 
+ 
+
+    <section class="project-info">
+        <div class="project-description">
+            <h1 class="heading">O que é o projeto</h1>
+            <p>A Semana de Minicursos é um projeto desenvolvido pela EP Aero, durante o qual, ao longo de uma semana inteira, nos períodos da manhã, tarde e noite, são oferecidos diversos minicursos presenciais sobre inúmeros tópicos relacionados à Engenharia Aeroespacial, de forma totalmente gratuita. Oferecemos várias turmas para os mesmos temas em horários diferentes, permitindo que os participantes escolham os horários mais convenientes.</p>
+            <p>Durante a Semana de Minicursos, os membros da EP Aero são incentivados a planejar todos os aspectos do evento, incluindo conteúdos, instrutores, localização, certificações e outras responsabilidades organizacionais. Para a comunidade externa, oferecemos a oportunidade de participar gratuitamente de cursos presenciais sobre uma variedade de temas essenciais no setor aeroespacial e áreas relacionadas.</p>
         </div>
+
+        <div class="project-origin">            
+
+            <h1 class="heading">Origem do projeto</h1 class="heading">
+                <p>O projeto surgiu do desejo dos membros da EP Aero de tornar conteúdos sobre o setor aeroespacial mais acessíveis, de modo que mesmo pessoas fora da área de tecnologia possam se engajar e aprender mais sobre o campo. Nossa equipe acredita fortemente que a melhor forma de desenvolver o setor é por meio da democratização da educação. Sabemos que atividades de capacitação profissional no setor de tecnologia muitas vezes têm custos altos, e nosso objetivo é tornar essas oportunidades mais acessíveis para aqueles que nem sempre possuem condições financeiras.</p>
+                <p>Buscamos, por meio da semana de minicursos, apresentar diversas aplicações em várias áreas, com o objetivo de despertar o interesse de futuros alunos e profissionais. Além disso, oferecemos a oportunidade para alunos que se dedicaram ao desenvolvimento de habilidades técnicas para ministrar e compartilhar seus conhecimentos com a comunidade.</p>
+        </div>
+
+        <div class="project-mission" id="processo-seletivo">
+            <h1 class="heading">Missão do projeto</h1 class="heading">
+
+            <div class="container">
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+                    <div class="items-container">
+                        
+                        <div class="circle-item">
+                            <div class="circle-btn">
+                                <img src="../../images/selection/1.png" alt="" />
+                            </div>
+                            <div class="circle-text">
+                                <a href="javascript:void(0)" class="btn-details-trainee" data-target="mission-content1">Curto Prazo</a>
+                            </div>
+                            <div id="mission-content1" class="hidden-content-timeline2">
+                                <p>A curto prazo, nosso objetivo é alcançar 500 inscrições nos minicursos, abrangendo não apenas o curso de Engenharia Aeroespacial, mas também outros cursos do Centro de Tecnologia da UFSM.</p>
+                            </div>
+                        </div>
+        
+                        <div class="circle-item">
+                            <div class="circle-btn">
+                                <img src="../../images/selection/2.png" alt="" />
+                            </div>
+                            <div class="circle-text">
+                                <a href="javascript:void(0)" class="btn-details-trainee" data-target="mission-content2">Médio Prazo</a>
+                            </div>
+                            <div id="mission-content2" class="hidden-content-timeline2">
+                                <p>A médio prazo, buscamos expandir o projeto para atingir pessoas de outras universidades da região e também aqueles sem vínculo acadêmico. Pretendemos ampliar os minicursos para cobrir mais áreas correlatas e estabelecer parcerias com empresas regionais.</p>
+                            </div>
+                        </div>
+        
+                        <div class="circle-item">
+                            <div class="circle-btn">
+                                <img src="../../images/selection/3.png" alt="" />
+                            </div>
+                            <div class="circle-text">
+                                <a href="javascript:void(0)" class="btn-details-trainee" data-target="mission-content3">Longo Prazo</a>
+                            </div>
+                            <div id="mission-content3" class="hidden-content-timeline2">
+                                <p>A longo prazo, almejamos firmar parcerias com grandes empresas de software relacionadas aos minicursos que oferecemos, para que possam auxiliar no evento.</p>
+                            </div>
+                        </div>
+         
+        
+                    </div>
+                </div>
+        
+                <div id="content-display" class="content-display"></div>
+            </div>
+        </div>
+
     </section>
 
+    <section class="list" id="list">
+        <h1 class="heading">Nossos Minicursos</h1>
+        <div class="list-container">
     
+            <div class="list-item">
+                <a href="javascript:void(0)" class="list-question" data-target="list-answer1">Python básico, intermediário e avançado</a>
+                <div id="list-answer1" class="list-answer">
+                    <p>Python é uma das linguagens de programação mais utilizadas no mundo da tecnologia atualmente, com inúmeras aplicações, como Inteligência Artificial e automação de processos operacionais.</p>
+                    <p>No minicurso de Python Básico, os participantes aprenderão sobre Programação Orientada a Objetos (POO) e fundamentos da programação, incluindo sintaxe básica, controle de fluxo, estruturas de dados primitivas (como arrays e strings) e funções.</p>
+                    <p>No minicurso de Python Intermediário, os participantes aprofundarão seus conhecimentos em estruturas de dados, como listas, tuplas e dicionários, além de funções, leitura e escrita em arquivos externos.</p>
+                    <p>No minicurso de Python Avançado, os participantes explorarão o potencial avançado da linguagem, trabalhando com classes, módulos e funções mais complexas.</p>
+
+                </div>
+            </div>
+    
+            <div class="list-item">
+                <a href="javascript:void(0)" class="list-question" data-target="list-answer2">Linguagem C básico, intermediário e avançado</a>
+                <div id="list-answer2" class="list-answer">
+                    <p>C é uma linguagem fundamental na programação de sistemas e aplicações de alto desempenho, graças as seu contato mais próximo do hardware, é possível reduzir significamente o tempo de execução de algoritmos.</p>
+                    <p>No minicurso de C Básico, os participantes aprenderão os fundamentos da programação, incluindo sintaxe básica, controle de fluxo, estruturas de dados primitivas (como arrays e strings) e funções.</p>
+                    <p>No minicurso de C Intermediário, os participantes explorarão conceitos mais avançados, como ponteiros, alocação dinâmica de memória e estruturas de dados, como listas, pilhas e arvores.</p>
+                    <p>No minicurso de C Avançado, os participantes trabalharão com conceitos avançados como gerenciamento de exceções e programação multi-threaded.</p>
+            </div>
+            </div>
+    
+            <div class="list-item">
+                <a href="javascript:void(0)" class="list-question" data-target="list-answer3">Ansys básico, intermediário e avançado</a>
+                <div id="list-answer3" class="list-answer">
+                    <p>Ansys é uma ferramenta de simulação utilizada para análises estruturais, térmicas e de fluidos em engenharia.</p>
+                    <p>No minicurso de Ansys Básico, os participantes aprenderão a interface do Ansys, conceitos fundamentais de modelagem, malhação e execução de análises simples, como análise de uma viga sujeita a diferentes tipos de carregamentos e a análise de um modelo simples de calorímetro.</p>
+                    <p>No minicurso de Ansys Intermediário, o foco será em análises mais complexas, como análise de elementos finitos (FEA) e simulações dinâmicas. Os participantes terão a oportunidade de trabalhar em projetos como a simulação de um suporte estrutural sob cargas variáveis para verificar sua durabilidade e segurança.</p>
+                    <p>No minicurso de Ansys Avançado, os participantes explorarão técnicas avançadas de simulação, como análise de fluidos computacional (CFD) e otimização topológica. Os participantes terão a oportunidade de trabalhar em projetos como simulação de fluxo aerodinâmico em uma asa de avião ou otimização topológica de estruturas de fuselagem.</p>
+                </div>
+            </div>
+    
+            <div class="list-item">
+                <a href="javascript:void(0)" class="list-question" data-target="list-answer4">Matlab básico, intermediário e avançado</a>
+                <div id="list-answer4" class="list-answer">
+                    <p>Matlab é uma plataforma de programação e ambiente de desenvolvimento amplamente utilizada para cálculos numéricos, visualização de dados e desenvolvimento de algoritmos.</p>
+                    <p>No minicurso de Matlab Básico, os participantes aprenderão sobre a interface do Matlab, variáveis, operadores, e funções básicas. Além disso, serão introduzidos a técnicas de visualização de dados e à criação de scripts simples para automação de cálculos.</p>
+                    <p>No minicurso de Matlab Intermediário, os participantes explorarão técnicas avançadas como programação orientada a objetos e manipulação de grandes conjuntos de dados. O curso incluirá projetos como implementação de algoritmos de controle para sistemas dinâmicos.</p>
+                    <p>No minicurso de Matlab Avançado, os participantes utilizarão o Simulink para modelar e simular sistemas complexos. Os participantes terão a oportunidade de trabalhar em projetos como a modelagem e controle de pequenos sistemas aeroespacial, como nanosatélites.</p>
+                
+                </div>
+            </div>
+    
+            <div class="list-item">
+                <a href="javascript:void(0)" class="list-question" data-target="list-answer5">SolidWorks básico e intermediário</a>
+                <div id="list-answer5" class="list-answer">
+                    <p>SolidWorks é um software de modelagem 3D utilizado para design mecânico e engenharia.</p>
+                    <p>No minicurso de SolidWorks Básico, os participantes aprenderão a criar e manipular modelos 3D básicos, a utilizar ferramentas de esboço e modelagem, e a montar conjuntos simples. Serão desenvolvidos projetos como a criação de um modelo básico de componente mecânico.</p>
+                    <p>No minicurso de SolidWorks Intermediário, o foco será em técnicas avançadas de modelagem e montagem. Os participantes realizarão projetos como a modelagem de um mecanismo complexo e a análise de montagem e interferência de componentes.</p>
+                </div>
+            </div>
+    
+            <div class="list-item">
+                <a href="javascript:void(0)" class="list-question" data-target="list-answer6">Introdução à Aerodinâmica</a>
+                <div id="list-answer6" class="list-answer">
+                    <p>Este minicurso oferece uma visão geral dos princípios básicos da aerodinâmica, essenciais para o design de aeronaves e veículos aeroespaciais.</p>
+                    <p>Os participantes aprenderão sobre a teoria do voo, forças aerodinâmicas, e análise de perfis aerodinâmicos. O curso incluirá projetos como a análise de perfis de asas e a avaliação de desempenho aerodinâmico. É recomendado realizar esse curso antes dos cursos de CFD e XFLR5 para ter uma base téorica antes dos assuntos práticos.</p>
+                </div>
+            </div>
+    
+            <div class="list-item">
+                <a href="javascript:void(0)" class="list-question" data-target="list-answer7">Introdução à Propulsão</a>
+                <div id="list-answer7" class="list-answer">
+                    <p>Este minicurso aborda os fundamentos dos sistemas de propulsão utilizados em aeronaves e espaçonaves.</p>
+                    <p>Os participantes aprenderão sobre diferentes tipos de motores, ciclos termodinâmicos e desempenho de propulsores. O curso incluirá projetos como a análise de desempenho de um motor a jato e o estudo dos efeitos de diferentes tipos de propulsores em uma aeronave. É recomendado realizar esse curso antes dos cursos de OpenRocket e OpenMotor para ter uma base téorica antes dos assuntos práticos.</p>            
+                </div>
+            </div>
+    
+            <div class="list-item">
+                <a href="javascript:void(0)" class="list-question" data-target="list-answer8">Introdução à Eletrônica</a>
+                <div id="list-answer8" class="list-answer">
+                    <p>Este minicurso oferece uma introdução aos princípios e componentes básicos da eletrônica.</p>
+                    <p>Os participantes aprenderão sobre circuitos eletrônicos, dispositivos e sistemas embarcados. O curso incluirá projetos como a construção de circuitos básicos e a integração de sensores eletrônicos em um sistema de controle.</p>            
+                </div>
+            </div>
+    
+            <div class="list-item">
+                <a href="javascript:void(0)" class="list-question" data-target="list-answer10">Introdução à CFD</a>
+                <div id="list-answer10" class="list-answer">
+                    <p>Este minicurso oferece uma introdução à Dinâmica de Fluidos Computacional (CFD), essencial para análise de fluidos em engenharia aeroespacial.</p>
+                    <p>Os participantes aprenderão sobre modelagem de fluxo, malhação e análise de resultados. O curso incluirá projetos como a simulação de fluxo em torno de corpos aerodinâmicos e a avaliação de eficiência de sistemas de ventilação.</p>            
+                </div>
+            </div>
+    
+            <div class="list-item">
+                <a href="javascript:void(0)" class="list-question" data-target="list-answer11">Introdução à Elementos Finitos</a>
+                <div id="list-answer11" class="list-answer">
+                    <p>Este minicurso cobre a técnica dos Elementos Finitos (FEA) para análise estrutural e térmica.</p>
+                    <p>Os participantes aprenderão sobre a formulação e aplicação de FEA em diferentes tipos de análises. O curso incluirá projetos como a análise de tensões em componentes estruturais e a avaliação de distribuição térmica.</p>            
+                </div>
+            </div>
+    
+            <div class="list-item">
+                <a href="javascript:void(0)" class="list-question" data-target="list-answer12">Introdução à Inteligência Artificial</a>
+                <div id="list-answer12" class="list-answer">
+                    <p>Este minicurso introduz conceitos básicos de Inteligência Artificial e Machine Learning.</p>
+                    <p>Os participantes aprenderão sobre algoritmos de aprendizado de máquina e suas aplicações. O curso incluirá projetos como implementação de modelos preditivos para manutenção preditiva e análise de dados.</p>            
+                </div>
+            </div>
+    
+            <div class="list-item">
+                <a href="javascript:void(0)" class="list-question" data-target="list-answer13">LaTeX/Overleaf</a>
+                <div id="list-answer13" class="list-answer">
+                    <p>Este minicurso ensina o uso do LaTeX e Overleaf para a criação de documentos técnicos e científicos de alta qualidade.</p>
+                    <p>Os participantes aprenderão a formatar e apresentar relatórios técnicos e artigos científicos. O curso incluirá projetos como a redação e formatação de documentos nos padrões da UFSM.</p>            
+                </div>
+            </div>
+    
+            <div class="list-item">
+                <a href="javascript:void(0)" class="list-question" data-target="list-answer14">OpenRocket e OpenMotor</a>
+                <div id="list-answer14" class="list-answer">
+                    <p>Este minicurso apresenta o uso de OpenRocket e OpenMotor para design e simulação de foguetes.</p>
+                    <p>Os participantes aprenderão a projetar e simular foguetes e motores de foguete. O curso incluirá projetos como a modelagem de um foguete e a análise de seu desempenho durante o voo.</p>            
+                </div>
+            </div>
+    
+            <div class="list-item">
+                <a href="javascript:void(0)" class="list-question" data-target="list-answer15">XFLR5</a>
+                <div id="list-answer15" class="list-answer">
+                    <p>Este minicurso aborda o uso do XFLR5 para análise aerodinâmica de asas e superfícies de voo.</p>
+                    <p>Os participantes aprenderão a utilizar o XFLR5 para modelar e analisar o desempenho de diferentes perfis de asas. O curso incluirá projetos como a avaliação da eficiência aerodinâmica e a otimização de perfis para diferentes condições de voo.</p>            
+                </div>
+            </div>
+    
+            <div class="list-item">
+                <a href="javascript:void(0)" class="list-question" data-target="list-answer16">Capella</a>
+                <div id="list-answer16" class="list-answer">
+                    <p>Este minicurso introduz o Capella para modelagem e design de sistemas complexos.</p>
+                    <p>Os participantes aprenderão a utilizar o Capella para criar modelos de sistemas e realizar análises de requisitos e desempenho. O curso incluirá projetos como o desenvolvimento de modelos de sistemas aeroespaciais e a análise de suas funcionalidades.</p>            
+                </div>
+            </div>
+    
+            <div class="list-item">
+                <a href="javascript:void(0)" class="list-question" data-target="list-answer17">STK</a>
+                <div id="list-answer17" class="list-answer">
+                    <p>Este minicurso cobre o uso do STK para análise e simulação de sistemas espaciais e de comunicação.</p>
+                    <p>Os participantes aprenderão a modelar e analisar missões espaciais e sistemas de comunicação. O curso incluirá projetos como a simulação de trajetórias de satélites e a análise de cobertura de sistemas de comunicação.</p>            
+                </div>
+            </div>
+    
+        </div>
+    </section>
+    
+    
+    <section class="last">
+        <h1 class="heading">Edições Anteriores</h1>
+        <div class="last-container">
+            <ul>
+                <li><a href="link-ano-anterior1" class="btn-projects">Semana de Minicursos 2024</a></li>
+                <li><a href="link-ano-anterior2" class="btn-projects">Semana de Minicursos 2023</a></li>
+            </ul>
+        </div>
+    </section>
+   
+    <section class="faq">
+        <h1 class="heading">Perguntas Frequentes</h1>
+        <div class="faq-container">
+            <div class="faq-item">
+                <a href="javascript:void(0)" class="faq-question" data-target="faq-answer5">Quanto custam os minicursos?</a>
+                <div id="faq-answer5" class="faq-answer">
+                    <p>Os minicursos são totalmente gratuitos.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <a href="javascript:void(0)" class="faq-question" data-target="faq-answer6">Preciso ter os softwares dos minicursos instalados no meu computador para participar?</a>
+                <div id="faq-answer6" class="faq-answer">
+                    <p>Depende do minicurso. A maioria dos minicursos é realizada em salas com computadores da UFSM, que já possuem a maioria dos softwares necessários. Se desejar instalar os softwares em seu próprio computador para praticar depois, recomendamos que o faça antes do minicurso. Enviaremos todas as instruções de instalação por e-mail alguns dias antes do início dos minicursos inscritos.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <a href="javascript:void(0)" class="faq-question" data-target="faq-answer2">Quem são os ministrantes dos minicursos?</a>
+                <div id="faq-answer2" class="faq-answer">
+                    <p>Os minicursos são ministrados por alunos e ex-alunos da UFSM. O objetivo é oferecer à comunidade externa a oportunidade de aprender novas habilidades, bem como permitir que alunos e parceiros compartilhem seus conhecimentos.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <a href="javascript:void(0)" class="faq-question" data-target="faq-answer1">Os minicursos são presenciais ou online?</a>
+                <div id="faq-answer1" class="faq-answer">
+                    <p>Todos os minicursos são presenciais e acontecem nas instalações do Centro de Tecnologia no campus sede da UFSM.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <a href="javascript:void(0)" class="faq-question" data-target="faq-answer3">Quando será a próxima semana de minicursos?</a>
+                <div id="faq-answer3" class="faq-answer">
+                    <p>Os minicursos ocorrem uma vez por ano e as datas são divulgadas em nossas redes sociais. Normalmente, a semana de minicursos é realizada no primeiro semestre do ano.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <a href="javascript:void(0)" class="faq-question" data-target="faq-answer4">Eu posso ajudar ministrando algum minicurso?</a>
+                <div id="faq-answer4" class="faq-answer">
+                    <p>Sim, aceitamos voluntários para ministrar os minicursos. Se você tem experiência com algum software ou tecnologia listada em <a href="#list-minicourse" class="btn-details">Nossos Minicursos</a>, ou tem um assunto que não está listado mas gostaria de compartilhar, entre em contato conosco pela seção de <a href="../../index.html#contato" class="btn-details">Contato</a>. É importante ressaltar que os ministrantes recebem apenas certificados de participação; não há remuneração financeira, pois se trata de uma atividade voluntária.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <a href="javascript:void(0)" class="faq-question" data-target="faq-answer7">Os minicursos geram certificados de participação?</a>
+                <div id="faq-answer7" class="faq-answer">
+                    <p>Sim, todos os participantes, ministrantes e organizadores do evento recebem certificados de participação, de acordo com as horas dedicadas durante o evento.</p>
+                </div>
+            </div>
+            
+
+            
+        </div>
+    </section>
 
     <section class="footer">
         <div class="box-container">
@@ -53,198 +328,7 @@
     </section>
 
     <script src="../../js/script.js"></script>
+    <script src="../../js/projects/minicursos.js"></script>
+    <script src="../../js/projects/project.js"></script>
 </body>
 </html>
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EP Aero - Revista Acadêmica</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="website icon" type="png" href="../../images/logo.png">
-
-</head>
-<body>
-
-    <section class="minicursos" id="minicursos">
-        <div class="box-container">
-        
-        <div class="card">
-            <div class="heading">SolidWorks</div>
-            <div class="details">Beste Design till date. Flex it up as you wish, but you can't break it.</div>
-            <div class="price">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nulla temporibus iusto, modi ipsam eligendi distinctio provident doloremque velit voluptatum itaque consectetur. Error eveniet, ipsam harum provident expedita sequi obcaecati!</div>
-            <button class="btn1">Inscreva-se</button>
-        </div> 
-        
-        <div class="card">
-            <div class="heading">Ansys</div>
-            <div class="details">Beste Design till date. Flex it up as you wish, but you can't break it.</div>
-            <div class="price">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nulla temporibus iusto, modi ipsam eligendi distinctio provident doloremque velit voluptatum itaque consectetur. Error eveniet, ipsam harum provident expedita sequi obcaecati!</div>
-            <button class="btn1">Inscreva-se</button>
-        </div> 
- 
-        <div class="card">
-            <div class="heading">Python</div>
-            <div class="details">Beste Design till date. Flex it up as you wish, but you can't break it.</div>
-            <div class="price">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nulla temporibus iusto, modi ipsam eligendi distinctio provident doloremque velit voluptatum itaque consectetur. Error eveniet, ipsam harum provident expedita sequi obcaecati!</div>
-            <button class="btn1">Inscreva-se</button>
-        </div>  
-
-        <div class="card">
-            <div class="heading">Elementos Finitos</div>
-            <div class="details">Beste Design till date. Flex it up as you wish, but you can't break it.</div>
-            <div class="price">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nulla temporibus iusto, modi ipsam eligendi distinctio provident doloremque velit voluptatum itaque consectetur. Error eveniet, ipsam harum provident expedita sequi obcaecati!</div>
-            <button class="btn1">Inscreva-se</button>
-        </div>  
-
-        <div class="card">
-            <div class="heading">Latex</div>
-            <div class="details">Beste Design till date. Flex it up as you wish, but you can't break it.</div>
-            <div class="price">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nulla temporibus iusto, modi ipsam eligendi distinctio provident doloremque velit voluptatum itaque consectetur. Error eveniet, ipsam harum provident expedita sequi obcaecati!</div>
-            <button class="btn1">Inscreva-se</button>
-        </div>    
-
-        <div class="card">
-            <div class="heading">Open Rocket</div>
-            <div class="details">Beste Design till date. Flex it up as you wish, but you can't break it.</div>
-            <div class="price">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nulla temporibus iusto, modi ipsam eligendi distinctio provident doloremque velit voluptatum itaque consectetur. Error eveniet, ipsam harum provident expedita sequi obcaecati!</div>
-            <button class="btn1">Inscreva-se</button>
-        </div>   
-
-        <div class="card">
-            <div class="heading">Capella</div>
-            <div class="details">Beste Design till date. Flex it up as you wish, but you can't break it.</div>
-            <div class="price">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nulla temporibus iusto, modi ipsam eligendi distinctio provident doloremque velit voluptatum itaque consectetur. Error eveniet, ipsam harum provident expedita sequi obcaecati!</div>
-            <button class="btn1">Inscreva-se</button>
-        </div> 
-        
-        <div class="card">
-            <div class="heading">XFLR5</div>
-            <div class="details">Beste Design till date. Flex it up as you wish, but you can't break it.</div>
-            <div class="price">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nulla temporibus iusto, modi ipsam eligendi distinctio provident doloremque velit voluptatum itaque consectetur. Error eveniet, ipsam harum provident expedita sequi obcaecati!</div>
-            <button class="btn1">Inscreva-se</button>
-        </div> 
-
-        <div class="card">
-            <div class="heading">Eletrônica Básica</div>
-            <div class="details">Beste Design till date. Flex it up as you wish, but you can't break it.</div>
-            <div class="price">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nulla temporibus iusto, modi ipsam eligendi distinctio provident doloremque velit voluptatum itaque consectetur. Error eveniet, ipsam harum provident expedita sequi obcaecati!</div>
-            <button class="btn1">Inscreva-se</button>
-        </div> 
-  
-        <div class="card">
-            <div class="heading">Introdução à Aerodinâmica</div>
-            <div class="details">Beste Design till date. Flex it up as you wish, but you can't break it.</div>
-            <div class="price">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nulla temporibus iusto, modi ipsam eligendi distinctio provident doloremque velit voluptatum itaque consectetur. Error eveniet, ipsam harum provident expedita sequi obcaecati!</div>
-            <button class="btn1">Inscreva-se</button>
-        </div> 
-      
-        <div class="card">
-            <div class="heading">Inteligência Artificial</div>
-            <div class="details">Beste Design till date. Flex it up as you wish, but you can't break it.</div>
-            <div class="price">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nulla temporibus iusto, modi ipsam eligendi distinctio provident doloremque velit voluptatum itaque consectetur. Error eveniet, ipsam harum provident expedita sequi obcaecati!</div>
-            <button class="btn1">Inscreva-se</button>
-        </div> 
-
-
-        <!--<svg class="glasses" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" xml:space="preserve">  <image id="image0" width="100" height="100" x="0" y="0" href="data:image/png;base64,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
-      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
-        wWsAAAAASUVORK5CYII="></image>
-
-        </svg>-->
-    </div>
-    </section>
-    <script src="../../js/script.js"></script>
-</body>
-</html> -->
