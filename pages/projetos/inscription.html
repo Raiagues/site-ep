@@ -33,43 +33,9 @@
         <div id="menu-btn" class="fas fa-bars"></div>
     </header>
 
-
-    <h1 class="heading">Regras para inscrições</h1>
-    <h1 class="heading">Regras para inscrições</h1>
-    <h1 class="heading">Regras para inscrições</h1>
-
-
- 
-  
-
-    <div id="calendar"></div>
-    <form>
-      <label>
-        <input type="radio" name="event-type" value="official" checked> Official
-      </label>
-      <label>
-        <input type="radio" name="event-type" value="waitlist"> Waitlist
-      </label>
-    </form>
     
-    <h2>Selected Meetings</h2>
-    <table id="meeting-details">
-      <thead>
-        <tr>
-          <th>Official Meetings</th>
-          <th>Waitlist Meetings</th>
-        </tr>
-      </thead>
-      <tbody id="event-details-body">
-      </tbody>
-    </table>
-    
-    <div id="popup">
-        <div class="popup-content">
-          <span class="popup-close" onclick="closePopup()">&times;</span>
-          <p id="popup-message"></p>
-        </div>
-      </div>
+
+   
 
 
 
@@ -93,33 +59,33 @@
 
 
     <section class="signup" id="participe">
-      <div class="section-content">
-          <h1 class="heading">Inscrição</h1>    
-          <form id="signup-form" onsubmit="sendEmail(event)">
-              <label for="name">Nome:</label>
-              <input type="text" id="name" name="name" required>
-              
-              <label for="email">E-mail:</label>
-              <input type="email" id="email" name="email" required>
-              
-              <label for="role">Você é:</label>
-              <select id="role" name="role" onchange="showFields()">
-                  <option value="student-ufsm">Aluno da UFSM</option>
-                  <option value="student-extern">Aluno de outra instituição</option>
-                  <option value="extern">Não possui nenhum vínculo institucional</option>
-              </select>
+        <div class="section-content">
+            <h1 class="heading">Inscrição</h1>    
+            <form id="signup-form" onsubmit="sendEmail(event)">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="role">Você é:</label>
+                <select id="role" name="role" onchange="showFields()">
+                    <option value="student-ufsm">Aluno da UFSM</option>
+                    <option value="student-extern">Aluno de outra instituição</option>
+                    <option value="extern">Não possui nenhum vínculo institucional</option>
+                </select>
 
-              <div id="CPF-field" style="display:block;">
-                <label for="CPF">CPF:</label>
-                <input type="text" id="CPF" name="CPF">
-              </div>
+                <div id="CPF-field" style="display:block;">
+                    <label for="CPF">CPF:</label>
+                    <input type="text" id="CPF" name="CPF">
+                </div>
 
-              <div id="inst-field" style="display:none;">
-                <label for="inst">Nome da instituição:</label>
-                <input type="text" id="inst" name="inst">
-              </div>
+                <div id="inst-field" style="display:none;">
+                    <label for="inst">Nome da instituição:</label>
+                    <input type="text" id="inst" name="inst">
+                </div>
 
-              <div id="curso-field" style="display:block;">
+                <div id="curso-field" style="display:block;">
                 <label for="curso">Curso:</label>
                 <select id="curso" name="curso" onchange="showOtherCourseField()">
                     <option value="engenharia-aeroespacial">Engenharia Aeroespacial</option>
@@ -133,25 +99,57 @@
                     <label for="other-course">Especifique:</label>
                     <input type="text" id="other-course" name="other-course">
                 </div>
-            </div>
+                </div>
 
-               <div id="field-field" style="display:none;">
-                <label for="field">Cargo Atual:</label>
-                <input type="text" id="field" name="field">
-              </div>
+                <div id="field-field" style="display:none;">
+                    <label for="field">Cargo Atual:</label>
+                    <input type="text" id="field" name="field">
+                </div>
               
-              <div id="age-field" style="display:block;">
-                <label for="age">Idade:</label>
-                <select id="age" name="age">
-                    <option value="20-">Menos de 20</option>
-                    <option value="20-25">20-25</option>
-                    <option value="25-30">25-30</option>
-                    <option value="30-40">30-40</option>
-                    <option value="40+">40+</option>
-                </select>
-              </div>
+                <div id="age-field" style="display:block;">
+                    <label for="age">Idade:</label>
+                    <select id="age" name="age">
+                        <option value="20-">Menos de 20</option>
+                        <option value="20-25">20-25</option>
+                        <option value="25-30">25-30</option>
+                        <option value="30-40">30-40</option>
+                        <option value="40+">40+</option>
+                    </select>
+                </div>
 
+                <div id="calendar"></div>
 
+                <div class="centered-form">
+                <form>
+                    <label>
+                    <input type="radio" name="event-type" value="official" checked> Official
+                    </label>
+                    <label>
+                    <input type="radio" name="event-type" value="waitlist"> Waitlist
+                    </label>
+                </form>
+                </div>
+
+                <div class="centered-details">
+                <h2>Selected Meetings</h2>
+                <table id="meeting-details">
+                    <thead>
+                    <tr>
+                        <th>Official Meetings</th>
+                        <th>Waitlist Meetings</th>
+                    </tr>
+                    </thead>
+                    <tbody id="event-details-body">
+                    </tbody>
+                </table>
+                </div>
+              
+                <div id="popup">
+                  <div class="popup-content">
+                    <span class="popup-close" onclick="closePopup()">&times;</span>
+                    <p id="popup-message"></p>
+                  </div>
+                </div>
 
               <button type="submit">Enviar</button>
           </form>

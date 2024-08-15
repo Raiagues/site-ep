@@ -164,53 +164,57 @@
 
 .calendar {
   display: grid;
-  grid-template-columns: 100px repeat(5, 1fr);
+  grid-template-columns:50px repeat(5, 1fr);
   grid-template-rows: auto repeat(6, 1fr);  
-  border: 1px solid #ddd;
   width: 100%;
   box-sizing: border-box;
+  border: none;  border: none; 
 }
 
+.calendar-cell {
+  border: 3px solid #0A1128;  
+  border-radius: 9px;   
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 55px;
+  width: px;
+  padding: 0; 
+  position: relative; 
+  background-color: #062649;
+}
+
+.calendar-cell:hover {
+  background-color: #0A325E;
+}
 .calendar div {
-  border: 1px solid #ddd;
-  background-color: #f9f9f9;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.time-slot-header {
-  background-color: #ddd;
-  font-weight: bold;
+.day-header {
+  padding: 6px 0px 0px 0px;
 }
 
-.day-header {
-  background-color: #ddd;
-  font-weight: bold;
-  font-size: 0.8em;
-  line-height: 1.2em;
-  margin: 0;
-  padding: 2px 0;
-  box-sizing: border-box;
+.day-number {
+  padding: 2px 0px 6px 0px;
 }
 
 .day-cell {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin: 0;
   padding: 0;
-  border: 1px solid #ddd;
+  border: 3px solid #0A1128;  
+  border-radius: 9px; 
   box-sizing: border-box;
-}
-
-.day-number {
-  font-size: 0.7em;
-  color: #333;
-  margin: 0;
-  padding: 2px 0;
+  justify-content: center;
+  align-items: center;
+  background-color: #062649;
 }
 
 .time-slot-cell {
@@ -218,75 +222,127 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 5px;
-  background-color: #f9f9f9;
-  box-sizing: border-box;
-  font-size: 0.8em;  
-}
-
-.time-slot-cell div:first-child {
-  font-weight: bold;
-  font-size: 0.8em;
   margin: 0;
-  padding: 2px 0;
-  border: 1px solid #ddd;
-}
-
-.time-slot-cell div:last-child {
-  font-weight: bold;
-  font-size: 0.8em;
-  margin: 0;
-  padding: 2px 0;
-  border: 1px solid #ddd;
-}
-
-/* Default calendar cell styling */
-.calendar-cell {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  padding: 5px;
-  cursor: pointer;
   box-sizing: border-box;
-  position: relative; /* For positioning the remaining places */
+  padding: 2px;  
+  border: 3px solid #0A1128;  
+  border-radius: 8px; 
+  width: 50px;      
+  background-color: #062649;
 }
 
-/* Styling for event cells */
+
+.day-header, .day-number, .time-slot-cell div:first-child, .time-slot-cell div:last-child {
+  font-size: 0.9em;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;  
+
+}
+
 .event {
-  padding: 5px;
-  border-radius: 4px;
-  font-size: 0.8em;
+  width: 100%;
+  height: 100%;
+  padding: 0;  
+  box-sizing: border-box;  
   text-align: center;
-  position: relative; /* For positioning the remaining places */
+  border-radius: inherit;  
+  background-color: #ffffff;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;  
+  top: 0;
+  left: 0;
+  border-radius: inherit;
 }
 
-/* Official event styling */
-.event.official {
-  background-color: #ffeb3b; /* Light yellow */
+
+.description-event {
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 6px;
+  text-transform: uppercase;  
+
 }
 
-/* Waitlist event styling */
-.event.waitlist {
-  background-color: #dfb2b2; /* Light pink */
-}
-
-/* Styling for selected events */
-.event.selected {
-  border: 2px solid #000; /* Dark border to indicate selection */
-}
- 
-
- 
-
-/* Styling for remaining places */
 .remaining-places {
-  font-size: 0.7em;
-  color: #555;
-  margin-top: 5px;
+  font-size: 0.8em;
+  color: #ffffff;
+  margin-top: 4px;
+  margin-bottom: 6px;
+  text-transform: uppercase;  
+
+}
+
+
+
+.event.official {
+  display: flex;
+  flex-direction: column;
+  background-color: #0177B5;  
+}
+
+.event.official:hover {
+  background-color: #0287ce;  
+}
+
+.event.official .description-event, .event.official .remaining-places, .event.waitlist .description-event, .event.waitlist .remaining-places,.event.default .description-event, .event.default .remaining-places {
+  color: white;
+}
+
+.event.waitlist {
+  display: flex;
+  flex-direction: column;
+  background-color: #2B3049;  
+}
+
+.event.waitlist:hover {
+  background-color: #363c58;  
 }
 
 .event.default {
-  background-color: #e0e0e0; /* Cinza claro */
-  border: 1px solid #ddd; /* Borda padrão */
+  display: flex;
+  flex-direction: column;
+  background-color: #062649;
+}
+
+.event.default:hover {
+  background-color: #0A325E;
+}
+
+.centered-form {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.centered-form form {
+  display: flex;
+  gap: 20px;
+}
+
+.centered-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+}
+
+.centered-details h2 {
+  margin-bottom: 10px;color: white;
+}
+
+.centered-details table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.centered-details th, 
+.centered-details td {
+  padding: 10px;
+  text-align: center;
 }
 
 #meeting-details {

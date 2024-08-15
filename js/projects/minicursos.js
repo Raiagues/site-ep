@@ -269,7 +269,7 @@ const dateRange = [
 ];
 
 const events = [
-  { date: "2024-08-06", timeSlot: "10h30-12h30", description: "Meeting with team", capacity: 10 },
+  { date: "2024-08-06", timeSlot: "10h30-12h30", description: "Meeting with team", capacity: 0 },
   { date: "2024-08-09", timeSlot: "19h30-21h30", description: "Project presentation", capacity: 5 },
   { date: "2024-08-06", timeSlot: "8h30-10h30", description: "Pre-meeting review", capacity: 8 },
   { date: "2024-08-07", timeSlot: "13h30-15h30", description: "Client follow-up", capacity: 7 },
@@ -296,6 +296,7 @@ function generateWeekdayCalendar(dateRange) {
 
   const timeSlotHeader = document.createElement('div');
   timeSlotHeader.className = 'time-slot-header';
+  // timeSlotHeader.textContent = "Horários"; 
   numberRow.appendChild(timeSlotHeader);
 
   const dayNumbers = [];
@@ -364,6 +365,7 @@ function generateWeekdayCalendar(dateRange) {
         eventDiv.className = 'event default';
 
         const description = document.createElement('div');
+        description.className = 'description-event';
         description.textContent = event.description;
         eventDiv.appendChild(description);
 
