@@ -120,23 +120,25 @@
                 <div id="calendar"></div>
 
                 <div class="centered-form">
-                <form>
-                    <label>
-                    <input type="radio" name="event-type" value="official" checked> Official
-                    </label>
-                    <label>
-                    <input type="radio" name="event-type" value="waitlist"> Waitlist
-                    </label>
-                </form>
-                </div>
-
+                    <form>
+                      <label>
+                        <input type="radio" name="event-type" value="official" checked>
+                        <span class="radio-label">Escolha Principal</span>
+                      </label>
+                      <label>
+                        <input type="radio" name="event-type" value="waitlist">
+                        <span class="radio-label">Lista de Espera</span>
+                      </label>
+                    </form>
+                  </div>
+                  
                 <div class="centered-details">
-                <h2>Selected Meetings</h2>
+                <h2>Minicursos Selecionados</h2>
                 <table id="meeting-details">
                     <thead>
                     <tr>
-                        <th>Official Meetings</th>
-                        <th>Waitlist Meetings</th>
+                        <th>Escolhas Principais</th>
+                        <th>Lista de Espera</th>
                     </tr>
                     </thead>
                     <tbody id="event-details-body">

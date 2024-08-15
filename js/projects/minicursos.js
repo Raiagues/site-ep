@@ -273,7 +273,8 @@ const events = [
   { date: "2024-08-09", timeSlot: "19h30-21h30", description: "Project presentation", capacity: 5 },
   { date: "2024-08-06", timeSlot: "8h30-10h30", description: "Pre-meeting review", capacity: 8 },
   { date: "2024-08-07", timeSlot: "13h30-15h30", description: "Client follow-up", capacity: 7 },
-  { date: "2024-08-08", timeSlot: "15h30-17h30", description: "Team brainstorming", capacity: 6 }
+  { date: "2024-08-08", timeSlot: "15h30-17h30", description: "Team brainstorming", capacity: 6 },
+  
 ];
 
 
@@ -322,7 +323,8 @@ function generateWeekdayCalendar(dateRange) {
 
     const dayNumber = document.createElement('div');
     dayNumber.className = 'day-number';
-    dayNumber.textContent = day;
+    dayNumber.textContent = `Dia ${day}`;
+
     dayCell.appendChild(dayNumber);
 
     numberRow.appendChild(dayCell);
