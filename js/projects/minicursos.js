@@ -260,21 +260,38 @@ const timeSlots = [
   "10h30-12h30",
   "13h30-15h30",
   "15h30-17h30",
+  "17h30-19h30",
   "19h30-21h30"
 ];
 
 const dateRange = [
-  "2024-08-05",
-  "2024-08-09"
+  "2024-08-10",
+  "2024-08-14"
 ];
 
 const events = [
-  { date: "2024-08-06", timeSlot: "10h30-12h30", description: "Meeting with team", capacity: 0 },
-  { date: "2024-08-09", timeSlot: "19h30-21h30", description: "Project presentation", capacity: 5 },
-  { date: "2024-08-06", timeSlot: "8h30-10h30", description: "Pre-meeting review", capacity: 8 },
-  { date: "2024-08-07", timeSlot: "13h30-15h30", description: "Client follow-up", capacity: 7 },
-  { date: "2024-08-08", timeSlot: "15h30-17h30", description: "Team brainstorming", capacity: 6 },
-  
+  { date: "2024-08-10", timeSlot: "8h30-10h30", description: "Ansys (Turma 1)", capacity: 0 },
+  { date: "2024-08-10", timeSlot: "17h30-19h30", description: "Introdução à Aerodinâmica", capacity: 0 },
+  { date: "2024-08-10", timeSlot: "19h30-21h30", description: "SolidWorks Básico (Turma 1)", capacity: 5 },
+
+  { date: "2024-08-11", timeSlot: "13h30-15h30", description: "Eletrônica Básica", capacity: 5 },
+  { date: "2024-08-11", timeSlot: "15h30-17h30", description: "Python Básico (Turma 1)", capacity: 5 },
+  { date: "2024-08-11", timeSlot: "17h30-19h30", description: "SolidWorks Avançado", capacity: 5 },
+  { date: "2024-08-11", timeSlot: "19h30-21h30", description: "XFLR", capacity: 5 },
+
+  { date: "2024-08-12", timeSlot: "8h30-10h30", description: "SolidWorks Básico (Turma 1)", capacity: 0 },
+  { date: "2024-08-12", timeSlot: "15h30-17h30", description: "Open Rocket e Open Motor", capacity: 6 },
+  { date: "2024-08-12", timeSlot: "17h30-19h30", description: "LaTeX ", capacity: 6 },
+  { date: "2024-08-12", timeSlot: "19h30-21h30", description: "Matlab (Turma 1)", capacity: 6 },
+
+  { date: "2024-08-13", timeSlot: "8h30-10h30", description: "SolidWorks Básico (Turma 2)", capacity: 0 },
+  { date: "2024-08-13", timeSlot: "17h30-19h30", description: "Matlab (Turma 1)", capacity: 6 },
+  { date: "2024-08-13", timeSlot: "19h30-21h30", description: "Python Básico (Turma 2)", capacity: 6 },
+
+  { date: "2024-08-14", timeSlot: "8h30-10h30", description: "Elementos Finitos e Abaqus", capacity: 0 },
+  { date: "2024-08-14", timeSlot: "13h30-15h30", description: "Ansys (Turma 2)", capacity: 0 },
+  { date: "2024-08-14", timeSlot: "17h30-19h30", description: "Inteligência Artificial", capacity: 6 },
+  { date: "2024-08-14", timeSlot: "19h30-21h30", description: "Python Avançado", capacity: 6 },
 ];
 
 

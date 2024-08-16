@@ -232,13 +232,11 @@
   background-color: #062649;
 }
 
-
 .day-header, .day-number, .time-slot-cell div:first-child, .time-slot-cell div:last-child {
   font-size: 0.9em;
   color: white;
   font-weight: bold;
   text-transform: uppercase;  
-
 }
 
 .event {
@@ -258,14 +256,12 @@
   border-radius: inherit;
 }
 
-
 .description-event {
   color: white;
   font-size: 1em;
   font-weight: bold;
   margin-top: 6px;
   text-transform: uppercase;  
-
 }
 
 .remaining-places {
@@ -277,12 +273,11 @@
 
 }
 
-
-
 .event.official {
   display: flex;
   flex-direction: column;
   background-color: #068dd6;  
+  padding: 10px; 
 }
 
 .event.official:hover {
@@ -297,23 +292,24 @@
   display: flex;
   flex-direction: column;
   background-color: #014e77;  
-
+  padding: 10px; 
 }
 
 .event.waitlist:hover {
   background-color: #015785;  
-
 }
 
 .event.default {
   display: flex;
   flex-direction: column;
   background-color: #062649;
+  padding: 10px; 
 }
 
 .event.default:hover {
   background-color: #0A325E;
 }
+
 .centered-form {
   display: flex;
   justify-content: center;
