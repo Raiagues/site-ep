@@ -248,7 +248,7 @@ function showFields() {
 
 function showOtherCourseField() {
   var curso = document.getElementById('curso').value;
-  document.getElementById('other-course-field').style.display = curso === 'outros' ? 'block' : 'none';
+  document.getElementById('other-course-field').style.display = curso === 'Outro' ? 'block' : 'none';
 }
 
 
@@ -314,7 +314,6 @@ function generateWeekdayCalendar(dateRange) {
 
   const timeSlotHeader = document.createElement('div');
   timeSlotHeader.className = 'time-slot-header';
-  // timeSlotHeader.textContent = "Horários"; 
   numberRow.appendChild(timeSlotHeader);
 
   const dayNumbers = [];
@@ -390,14 +389,14 @@ function generateWeekdayCalendar(dateRange) {
 
         const remainingPlaces = document.createElement('div');
         remainingPlaces.className = 'remaining-places';
-        remainingPlaces.textContent = `Places remaining: ${event.capacity - (currentBookings[`${event.date}-${event.timeSlot}`] || 0)}`;
+        remainingPlaces.textContent = `Vagas Restantes: ${event.capacity - (currentBookings[`${event.date}-${event.timeSlot}`] || 0)}`;
         eventDiv.appendChild(remainingPlaces);
 
         dayCell.appendChild(eventDiv);
 
         dayCell.addEventListener('click', () => handleCellClick(dayCell, event));
-        dayCell.addEventListener('mouseover', () => handleCellHover(dayCell));
-        dayCell.addEventListener('mouseout', () => handleCellMouseOut(dayCell));
+        // dayCell.addEventListener('mouseover', () => handleCellHover(dayCell));
+        // dayCell.addEventListener('mouseout', () => handleCellMouseOut(dayCell));
       }
 
       row.appendChild(dayCell);
@@ -408,99 +407,106 @@ function generateWeekdayCalendar(dateRange) {
 
   updateMeetingDetails();
 }
-
 function handleCellClick(cell, event) {
   const eventType = document.querySelector('input[name="event-type"]:checked').value;
   const key = `${event.date}-${event.timeSlot}`;
 
-  // Verifica se o evento já está selecionado
+  // Check if the event is already selected
   const currentSelectedEvent = selectedEvents.find(e => e.date === event.date && e.timeSlot === event.timeSlot);
 
   if (currentSelectedEvent) {
-    if (currentSelectedEvent.type === eventType) {
-      // Se o evento estiver selecionado com o tipo atual e for clicado novamente, desmarque-o
-      cell.classList.remove('selected');
-      selectedEvents = selectedEvents.filter(e => !(e.date === event.date && e.timeSlot === event.timeSlot));
-      currentBookings[key]--; // Reduz o número de reservas para o evento
+      if (currentSelectedEvent.type === eventType) {
+          // If the event is selected with the current type and clicked again, deselect it
+          cell.classList.remove('selected');
+          selectedEvents = selectedEvents.filter(e => !(e.date === event.date && e.timeSlot === event.timeSlot));
 
-      // Atualiza a cor do evento para o padrão
-      const eventElement = cell.querySelector('.event');
-      if (eventElement) {
-        eventElement.className = 'event default'; // Aplica a cor padrão
-        const remainingPlaces = eventElement.querySelector('.remaining-places');
-        if (remainingPlaces) {
-          remainingPlaces.textContent = `Places remaining: ${event.capacity - (currentBookings[key] || 0)}`;
-        }
+          if (eventType === 'official') {
+              currentBookings[key]--; // Decrease the booking count only for official choices
+          }
+
+          // Update the event color to default
+          const eventElement = cell.querySelector('.event');
+          if (eventElement) {
+              eventElement.className = 'event default'; // Apply the default color
+              const remainingPlaces = eventElement.querySelector('.remaining-places');
+              if (remainingPlaces) {
+                  remainingPlaces.textContent = `Vagas Restantes: ${event.capacity - (currentBookings[key] || 0)}`;
+              }
+          }
+      } else {
+          // If the event is selected with a different type, check if the type change is within the limits
+          const selectedEventTypeCount = selectedEvents.filter(e => e.type === eventType).length;
+
+          if (eventType === 'official' && selectedEventTypeCount >= MAX_OFFICIAL) {
+              showPopup('Você não pode selecionar mais de 3 minicursos como escolha oficiais.');
+              return;
+          }
+          if (eventType === 'waitlist' && selectedEventTypeCount >= MAX_WAITLIST) {
+              showPopup('Você não pode selecionar mais de 2 minicursos na lista de espera.');
+              return;
+          }
+          if (eventType === 'official' && (currentBookings[key] || 0) >= event.capacity) {
+              showPopup('Esse minicurso está completo.');
+              return;
+          }
+
+          // Replace the current event with the new event type
+          selectedEvents = selectedEvents.filter(e => !(e.date === event.date && e.timeSlot === event.timeSlot));
+
+          if (currentSelectedEvent.type === 'official') {
+              currentBookings[key]--;  
+          }
+
+          // Now update the selection with the new event type
+          event.type = eventType;
+          selectedEvents.push(event);
+          if (eventType === 'official') {
+              currentBookings[key] = (currentBookings[key] || 0) + 1; // Increase the booking count only for official choices
+          }
       }
-    } else {
-      // Se o evento estiver selecionado com um tipo diferente, verifica se a troca de tipo está dentro dos limites
+  } else {
+      // If the event is not selected, check if the number of selected events of the specified type is within the limits
       const selectedEventTypeCount = selectedEvents.filter(e => e.type === eventType).length;
 
       if (eventType === 'official' && selectedEventTypeCount >= MAX_OFFICIAL) {
-        showPopup('Você não pode selecionar mais de 3 reuniões oficiais.');
-        return;
+          showPopup('Você não pode selecionar mais de 3 minicursos como escolha oficiais.');
+          return;
       }
       if (eventType === 'waitlist' && selectedEventTypeCount >= MAX_WAITLIST) {
-        showPopup('Você não pode selecionar mais de 2 reuniões na lista de espera.');
-        return;
+          showPopup('Você não pode selecionar mais de 2 minicursos na lista de espera.');
+          return;
+      }
+      // Check if there is capacity available for official choice
+      if (eventType === 'official' && (currentBookings[key] || 0) >= event.capacity) {
+          showPopup('Esse minicurso está completo.');
+          return;
       }
 
-      // Substitui o evento atual pelo novo tipo
-      cell.classList.remove('selected');
-      selectedEvents = selectedEvents.filter(e => !(e.date === event.date && e.timeSlot === event.timeSlot));
-      currentBookings[key]--; // Reduz o número de reservas para o evento atual
-
-      // Atualiza a seleção com o novo tipo de evento
-      if ((currentBookings[key] || 0) < event.capacity) {
-        cell.classList.add('selected');
-        event.type = eventType;
-        selectedEvents.push(event);
-        currentBookings[key] = (currentBookings[key] || 0) + 1; // Aumenta o número de reservas para o evento
-      } else {
-        showPopup('Este evento está cheio. Não é possível adicionar mais reservas.');
-        return;
+      // Add the event to the list of selected events
+      cell.classList.add('selected');
+      event.type = eventType;
+      selectedEvents.push(event);
+      if (eventType === 'official') {
+          currentBookings[key] = (currentBookings[key] || 0) + 1; // Increase the booking count only for official choices
       }
-    }
-  } else {
-    // Se o evento não estiver selecionado, verifica se a quantidade de eventos selecionados do tipo especificado está dentro dos limites
-    const selectedEventTypeCount = selectedEvents.filter(e => e.type === eventType).length;
-
-    if (eventType === 'official' && selectedEventTypeCount >= MAX_OFFICIAL) {
-      showPopup('Você não pode selecionar mais de 3 reuniões oficiais.');
-      return;
-    }
-    if (eventType === 'waitlist' && selectedEventTypeCount >= MAX_WAITLIST) {
-      showPopup('Você não pode selecionar mais de 2 reuniões na lista de espera.');
-      return;
-    }
-
-    // Verifica se há capacidade disponível
-    if ((currentBookings[key] || 0) >= event.capacity) {
-      showPopup('Este evento está cheio. Não é possível adicionar mais reservas.');
-      return;
-    }
-
-    // Adiciona o evento à lista de selecionados
-    cell.classList.add('selected');
-    event.type = eventType;
-    selectedEvents.push(event);
-    currentBookings[key] = (currentBookings[key] || 0) + 1; // Aumenta o número de reservas para o evento
   }
 
-  // Atualiza o elemento do evento
+  // Update the event element
   const eventElement = cell.querySelector('.event');
   if (eventElement) {
-    eventElement.className = `event ${eventType} ${cell.classList.contains('selected') ? 'selected' : 'default'}`;
-    // Atualiza a quantidade de lugares restantes
-    const remainingPlaces = eventElement.querySelector('.remaining-places');
-    if (remainingPlaces) {
-      remainingPlaces.textContent = `Places remaining: ${event.capacity - (currentBookings[key] || 0)}`;
-    }
+      eventElement.className = `event ${eventType} ${cell.classList.contains('selected') ? 'selected' : 'default'}`;
+      // Update the remaining places count
+      const remainingPlaces = eventElement.querySelector('.remaining-places');
+      if (remainingPlaces) {
+          remainingPlaces.textContent = `Vagas Restantes: ${event.capacity - (currentBookings[key] || 0)}`;
+      }
   }
 
-  // Atualiza os detalhes da reunião
+  // Update the meeting details
   updateMeetingDetails();
 }
+
+
 
 
 
@@ -534,7 +540,147 @@ function updateMeetingDetails() {
     detailsBody.appendChild(row);
   }
 }
- 
 
 // Generate the calendar for the weekdays defined in the array
 generateWeekdayCalendar(dateRange);
+
+
+
+const inscriptions = [
+  {
+      "name": "rodriger",
+      "email": "emillyraianerodrigues@gmail.com",
+      "role": "student-ufsm",
+      "cpf": "05722652989",
+      "inst": "UFSM",
+      "curso": "Engenharia Aeroespacial",
+      "age": "Menos de 20",
+      "officialEvents": [
+          "2024-08-12 15h30-17h30 - Open Rocket e Open Motor",
+          "2024-08-12 17h30-19h30 - LaTeX "
+      ],
+      "waitlistEvents": [
+          "2024-08-13 17h30-19h30 - Matlab (Turma 1)",
+          "2024-08-13 19h30-21h30 - Python Básico (Turma 2)"
+      ]
+  },
+  {
+      "name": "rodriger",
+      "email": "emillyraianerodrigues@gmail.com",
+      "role": "student-ufsm",
+      "cpf": "05722652989",
+      "inst": "UFSM",
+      "curso": "Engenharia Aeroespacial",
+      "age": "Menos de 20",
+      "officialEvents": [
+          "2024-08-12 15h30-17h30 - Open Rocket e Open Motor",
+          "2024-08-12 17h30-19h30 - LaTeX "
+      ],
+      "waitlistEvents": [
+          "2024-08-13 17h30-19h30 - Matlab (Turma 1)",
+          "2024-08-13 19h30-21h30 - Python Básico (Turma 2)"
+      ]
+  }
+];
+
+function handleFormSubmit(event) {
+  event.preventDefault(); // Previne o comportamento padrão do formulário
+
+  // Obtém os valores dos campos do formulário
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const role = document.getElementById('role').value;
+  const cpf = document.getElementById('CPF').value;
+  const inst = document.getElementById('inst').value;
+  const curso = document.getElementById('curso').value;
+  const otherCourse = document.getElementById('other-course').value; // Valor do campo "Especifique"
+  const age = document.getElementById('age').value;
+
+  // Obtém as escolhas principais e de lista de espera
+  const officialEvents = selectedEvents.filter(e => e.type === 'official').map(e => `${e.date} ${e.timeSlot} - ${e.description}`);
+  const waitlistEvents = selectedEvents.filter(e => e.type === 'waitlist').map(e => `${e.date} ${e.timeSlot} - ${e.description}`);
+
+  // Cria um objeto de inscrição
+  const inscription = {
+      name: name,
+      email: email,
+      role: role,
+      cpf: cpf,
+      inst: role === 'student-ufsm' ? 'UFSM' : inst,
+      curso: curso === 'Outro' ? otherCourse : curso,  
+      age: age,
+      officialEvents: officialEvents,
+      waitlistEvents: waitlistEvents
+  };
+
+  // Adiciona a inscrição à lista
+  inscriptions.push(inscription);
+
+  // Atualiza a tabela com as inscrições
+  updateInscriptionTable();
+
+  // Atualiza os detalhes dos minicursos
+  updateMeetingDetails();
+
+  // Exibe a mensagem de sucesso
+  showPopup("Sua mensagem foi enviada com sucesso!");
+}
+
+
+function updateInscriptionTable() {
+  const tableBody = document.getElementById('inscription-table-body');
+  tableBody.innerHTML = ''; // Limpa o corpo da tabela
+
+  inscriptions.forEach(inscription => {
+      // Cria uma nova linha de tabela
+      const row = document.createElement('tr');
+
+      // Cria células e adiciona texto
+      const nameCell = createCell(inscription.name);
+      const emailCell = createCell(inscription.email);
+      const roleCell = createCell(getRoleText(inscription.role)); // Usa a função getRoleText
+      const cursoCell = createCell(inscription.curso);
+      const cpfCell = createCell(inscription.cpf);
+      const instCell = createCell(inscription.inst); // Verifica o role
+      const ageCell = createCell(inscription.age);
+      
+      // Cria células para as escolhas principais e a lista de espera
+      const officialEventsCell = createCell(inscription.officialEvents.join('\n'));
+      const waitlistEventsCell = createCell(inscription.waitlistEvents.join('\n'));
+
+
+      // Adiciona as células à linha
+      row.appendChild(nameCell);
+      row.appendChild(emailCell);
+      row.appendChild(roleCell);
+      row.appendChild(cpfCell);
+      row.appendChild(instCell);
+      row.appendChild(cursoCell);
+      row.appendChild(ageCell);
+      row.appendChild(officialEventsCell);
+      row.appendChild(waitlistEventsCell);
+
+      // Adiciona a linha ao corpo da tabela
+      tableBody.appendChild(row);
+  });
+}
+
+
+function createCell(text) {
+  const cell = document.createElement('td');
+  cell.textContent = text || 'N/A'; // Define o texto da célula, substituindo valores vazios por 'N/A'
+  return cell;
+}
+
+function getRoleText(role) {
+  switch (role) {
+      case 'student-ufsm':
+          return 'Aluno da UFSM';
+      case 'student-extern':
+          return 'Aluno de outra instituição';
+      case 'extern':
+          return 'Sem vínculo institucional';
+  }
+}
+
+updateInscriptionTable();

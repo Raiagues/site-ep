@@ -403,28 +403,118 @@ form input[type="radio"]:checked + .radio-label:hover {
   background-color: #0A325E;
 }
 
-#meeting-details table {
+#meeting-details table, .inscription-table {
   width: 100%;
   border-collapse: separate;  
 }
 
+.scrollable-table-container {
+  overflow-x: auto; 
+  -webkit-overflow-scrolling: touch; 
+  margin-bottom: 1em; 
+  width: 100%;  
+  /* position: relative;   */
+}
 
+/* .inscription-table {  
+  table-layout: fixed;  
+} */
 
+.inscription-table th, 
+.inscription-table td {
+  border: 3px solid #0A1128;  
+  padding: 12px;
+  font-size: 1em;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: #062649;
+  color: #fff;
+  text-align: center;   
+  vertical-align: middle;   
+  white-space: pre-wrap;  
+  word-wrap: break-word;
+}
+
+.inscription-table th, 
+.inscription-table td {
+  vertical-align: top;  
+}
+
+  
+ .inscription-table th:nth-child(1),
+.inscription-table td:nth-child(1) {
+  width: 8%;  
+}
+
+.inscription-table th:nth-child(2),
+.inscription-table td:nth-child(2) {
+  width: 15%;  
+}
+
+.inscription-table th:nth-child(3),
+.inscription-table td:nth-child(3) {
+  width: 10%;
+}
+
+.inscription-table th:nth-child(4),
+.inscription-table td:nth-child(4) {
+  width: 10%;
+}
+
+.inscription-table th:nth-child(5),
+.inscription-table td:nth-child(5) {
+  width: 12%;
+}
+
+.inscription-table th:nth-child(6),
+.inscription-table td:nth-child(6) {
+  width: 12%;
+}
+
+.inscription-table th:nth-child(7),
+.inscription-table td:nth-child(7) {
+  width: 10%;
+}
+
+.inscription-table th:nth-child(8),
+.inscription-table td:nth-child(8),
+.inscription-table th:nth-child(9),
+.inscription-table td:nth-child(9) {
+  width: 20%;  
+  white-space: nowrap; 
+}
 
 @media (min-width: 1800px) {
   .carousel-item {
     min-height: 200px;   
   }
+
 }
 
 @media (max-width: 1024px) {
   .carousel-item {
     min-width: 40%; 
+  }  
+  .inscription-table th, 
+  .inscription-table td {
+    padding: 8px;
+    font-size: 0.9em;
+  }
+
+  .inscription-table th:nth-child(8),
+  .inscription-table td:nth-child(8),
+  .inscription-table th:nth-child(9),
+  .inscription-table td:nth-child(9) {
+    width: 30%;
+  }
+
+  .inscription-table th:nth-child(2),
+  .inscription-table td:nth-child(2) {
+    width: 20%;
   }
 }
 
- @media (max-width: 940px) {
-
+@media (max-width: 940px) {
   .carousel-item {
     min-width: 45%;  
   }
@@ -438,13 +528,48 @@ form input[type="radio"]:checked + .radio-label:hover {
 
 @media (max-width: 768px) {
   .carousel-item {
-    min-width: 60%;  
+    min-width: 80%;  
+  }
+  .inscription-table th, 
+  .inscription-table td {
+    padding: 6px;
+    font-size: 0.8em;
+  }
+  
+  .inscription-table th:nth-child(8),
+  .inscription-table td:nth-child(8),
+  .inscription-table th:nth-child(9),
+  .inscription-table td:nth-child(9) {
+    width: 35%;
+  }
+
+  .inscription-table th:nth-child(2),
+  .inscription-table td:nth-child(2) {
+    width: 25%;
   }
 }
 
 @media (max-width: 480px) {
-
   .carousel-item {
     min-width: 70%;  
   }
+  
+  .inscription-table th, 
+  .inscription-table td {
+    padding: 4px;
+    font-size: 0.7em;
+  }
+
+  .inscription-table th:nth-child(8),
+  .inscription-table td:nth-child(8),
+  .inscription-table th:nth-child(9),
+  .inscription-table td:nth-child(9) {
+    width: 40%;
+  }
+
+  .inscription-table th:nth-child(2),
+  .inscription-table td:nth-child(2) {
+    width: 30%;
+  }
 }
+
