@@ -184,7 +184,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const items = document.querySelectorAll('.carousel-item');
   const itemWidth = document.querySelector('.carousel-item').offsetWidth;
   const itemMargin = parseInt(window.getComputedStyle(document.querySelector('.carousel-item')).marginLeft, 10);
-  const visibleItems = Math.floor(container.parentElement.offsetWidth / (itemWidth + itemMargin * 2));
 
   let index = 0;
 
@@ -548,10 +547,10 @@ generateWeekdayCalendar(dateRange);
 
 const inscriptions = [
   {
-      "name": "rodriger",
-      "email": "emillyraianerodrigues@gmail.com",
+      "name": "test1",
+      "email": "test1@gmail.com",
       "role": "student-ufsm",
-      "cpf": "05722652989",
+      "cpf": "9458664151",
       "inst": "UFSM",
       "curso": "Engenharia Aeroespacial",
       "age": "Menos de 20",
@@ -565,13 +564,30 @@ const inscriptions = [
       ]
   },
   {
-      "name": "rodriger",
-      "email": "emillyraianerodrigues@gmail.com",
-      "role": "student-ufsm",
-      "cpf": "05722652989",
-      "inst": "UFSM",
-      "curso": "Engenharia Aeroespacial",
-      "age": "Menos de 20",
+      "name": "test2",
+      "email": "test2@gmail.com",
+      "role": "student-extern",
+      "cpf": "89443691576",
+      "inst": "UFSC",
+      "curso": "Medicina",
+      "age": "20-25",
+      "officialEvents": [
+          "2024-08-12 15h30-17h30 - Open Rocket e Open Motor",
+          "2024-08-12 17h30-19h30 - LaTeX "
+      ],
+      "waitlistEvents": [
+          "2024-08-13 17h30-19h30 - Matlab (Turma 1)",
+          "2024-08-13 19h30-21h30 - Python Básico (Turma 2)"
+      ]
+  },
+  {
+      "name": "test3",
+      "email": "test3@gmail.com",
+      "role": "extern",
+      "cpf": "98526565551",
+      "inst": "N/A",
+      "curso": "Pedreiro",
+      "age": "Mais de 40",
       "officialEvents": [
           "2024-08-12 15h30-17h30 - Open Rocket e Open Motor",
           "2024-08-12 17h30-19h30 - LaTeX "

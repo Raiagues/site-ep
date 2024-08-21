@@ -1,0 +1,241 @@
+.inicio .image img {
+  position: absolute;  
+  width: auto;  
+  height: auto; 
+}
+
+.inicio .image img:nth-of-type(1) {
+  order: 2;
+  width: 900px; 
+  height: auto; 
+  z-index: 2;
+}
+
+
+.inicio .image img:nth-of-type(2) {
+  order: 1;
+  width: 1300px; 
+  height: auto;  
+  z-index: 1;
+}
+
+.inicio .image img:nth-of-type(3) {
+  order: 3;
+  z-index: 3;
+  width: 1300px;  
+  height: auto;  
+}
+
+.inicio {
+  flex-direction: column;
+}
+
+@keyframes inclined-move {
+  0%, 100% {
+      transform: translateX(50px) ; 
+  }
+  50% {
+      transform: translateX(-50px);  
+  }
+}
+
+.inicio .image img:nth-of-type(1) {
+  animation: inclined-move 5s ease-in-out infinite; 
+}
+
+
+.carousel {
+  position: relative;
+  width: 100%; 
+  overflow: hidden;
+}
+
+.carousel-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  position: relative;  
+  flex: 0 0 30%;  
+  margin: 0 10px; 
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: #ffffff; 
+  border: 8px solid var(--main-color);
+  min-width: 300px;
+  min-height: 230px; 
+}
+
+.carousel-item h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.5rem;
+  color: var(--main-color);
+  text-align: center;
+}
+
+.carousel-item p {
+  margin: 0;
+  color: #062649;
+  font-size: 0.9rem;
+  text-align: justify; 
+}
+
+.carousel-item h3 {
+  margin: 10px 0;
+  color: #062649;
+  font-weight: bold;
+}
+
+.carousel-prev, .carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(1, 119, 181, 0.7);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, box-shadow 0.3s;
+  z-index: 10;
+  width: 40px; 
+  height: 40px; 
+}
+
+.carousel-prev {
+  left: 10px; 
+}
+
+.carousel-next {
+  right: 10px; 
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+  background-color: rgba(1, 119, 181, 0.9);
+}
+
+.carousel-item .list-answer {
+  display: none;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+  margin-bottom: 50px;
+}
+
+.carousel-item .list-answer.show {
+  display: block;
+  max-height: 200px; 
+}
+
+
+.toggle-details {
+  position: absolute;  
+  bottom: 20px;  
+  left: 50%; 
+  transform: translateX(-50%);  
+  padding: 5px 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #ffffff;
+  background: var(--main-color);
+  z-index: 1;
+  text-transform: uppercase;  
+  font-weight: 700; 
+  border: none;  
+  transition: color 0.3s ease, background-color 0.3s ease; 
+  margin-top: 20px;
+}
+
+.toggle-details::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: #283254;
+  z-index: -1;
+  transition: .2s ease-out;
+}
+ 
+.toggle-details:hover::before {
+  width: 100%;  
+} 
+
+.carousel-item {
+  position: relative;  
+  flex: 0 0 30%;  
+  margin: 0 10px; 
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: #ffffff; 
+  border: 8px solid var(--main-color);
+}
+
+@media (min-width: 1800px) {
+  .carousel-item {
+    min-height: 200px;   
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .carousel-item {
+    min-width: 40%; 
+  }  
+}
+
+@media (max-width: 940px) {
+  .carousel-item {
+    min-width: 45%;  
+    max-width: 100%;
+  }  
+  .inicio .image img {
+    max-width: 90%; 
+    height: auto; 
+  }
+  .inicio .image img:nth-of-type(1) {
+    max-width: 50%; 
+  }
+}
+
+@media (max-width: 800px) {
+  .carousel-item {
+    min-width: 50%; 
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    min-width: 80%;  
+    max-width: 100%;
+  }
+  .inicio .image img {
+    max-width: 90%; 
+    height: auto; 
+  }
+  .inicio .image img:nth-of-type(1) {
+    max-width: 50%; 
+  }  
+  .carousel-item p {
+    font-size: 1.rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-item {
+    min-width: 70%;  
+    max-width: 100%;
+  }
+  .inicio .image img {
+    max-width: 90%; 
+    height: auto; 
+  }
+  .inicio .image img:nth-of-type(1) {
+    max-width: 50%; 
+  }
+
+  
+
+}
+

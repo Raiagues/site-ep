@@ -17,7 +17,6 @@ li {
 }
 
 ul {
-  /* list-style-type: none; */
   padding: 0px 0px 0px 40px; 
   margin: 0; 
   font-size: 1.5rem;
@@ -90,7 +89,7 @@ textarea {
   min-height: 100px;  
 }
 
-button[type="submit"] {
+button[type="submit"], .black-btn {
   margin-top: 1rem;
   display: inline-block;
   padding: 5px 10px;
@@ -110,7 +109,7 @@ button[type="submit"] {
   transition: color 0.3s ease, background-color 0.3s ease; 
 }
 
-button[type="submit"]::before {
+button[type="submit"]::before, .black-btn::before {
   content: '';
   position: absolute;
   top: 0; left: 0;
@@ -121,11 +120,11 @@ button[type="submit"]::before {
   transition: .2s ease-out;
 }
 
-button[type="submit"]:hover {
+button[type="submit"]:hover, .black-btn:hover {
   color: var(--main-color);
 }
 
-button[type="submit"]:hover::before {
+button[type="submit"]:hover::before, .black-btn:hover::before {
   width: 100%;  
 } 
 

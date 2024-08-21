@@ -1495,29 +1495,26 @@ h2 {
   background-color: rgba(0,0,0,0.3);  
   color: black;
   text-align: center;
-  padding-top: 50%;
+  padding-top: 400px;
   z-index: 1000;
+  align-items: center;  
+  justify-content: center;   
 }
 
 #popup .popup-content {
   background-color: #fff; 
   border: 8px solid var(--main-color);    
-  padding: 20px;
-  display: inline-block;
-  border-radius: 0;
+  padding: 3rem 2rem;  
+  border-radius: 0; 
+  max-width: 300px;  
+  max-height: 200px;  
+  left: 40%;
+  top: 0;
+  overflow: auto;
+  position: relative;  
+  box-sizing: border-box;  
 }
 
-#popup .popup-content {
-  position: relative;
-  display: inline-block;
-  background-color: #fff;
-  border: 8px solid var(--main-color);
-  padding:  3rem 2rem 0rem 2rem;  
-  border-radius: 0; 
-  max-width: 90%;  
-  max-height: 90%;  
-  overflow: auto;  
-}
 
 .popup-close {
   color: #0A325E;
@@ -1550,6 +1547,9 @@ h2 {
   .sobre .content .title {
     font-size:1.9rem;
   }
+  #popup .popup-content {
+    left: 35%;
+  }
 }
 
 @media (max-width: 1450px) {
@@ -1567,9 +1567,11 @@ h2 {
   }
   #display-image {
     content: url('../../images/selection/workshops/ep2.png');
+  }  
+  #popup .popup-content {
+    left: 40%;
   }
 }
-
 
 @media (max-width: 1130px) {
   .inicio .image img {
@@ -1598,6 +1600,9 @@ h2 {
  
   #display-image {
     content: url('../../images/selection/workshops/ep3.png');
+  }  
+  #popup .popup-content {
+    left: 35%;
   }
 }
 
@@ -1605,29 +1610,26 @@ h2 {
   .valores .box {
       flex-basis: calc(30% - 1.5rem);
   }
+  
 }
 
 @media (max-width: 600px) {
   .valores .box {
       flex-basis: calc(100% - 1.5rem);
-  }
+  } 
 }
 
 
 @media (max-width: 1000px) {
- 
   .container-workshops {
     grid-template-columns: 1fr;  
   }
-
   .card-figure {
     display: none;  
   }
-
   .image-display {
     display: none;  
   }
-
   .hidden-content {
     font-size: 1.2em;
     margin: 10px  0 ;
@@ -1638,14 +1640,15 @@ h2 {
     margin: 10px  0 ;
     text-align: center;
   }
-  
   .card-title-workshop {
     text-align: center;
   } 
-  
   .card-description-workshop {
     font-size: 1.3em;
     text-align: center;
+  }
+  #popup .popup-content {
+    left: 35%;
   }
 } 
 
@@ -1663,6 +1666,9 @@ h2 {
   .container-workshops {
     grid-template-columns: 1fr;  
   }
+  #popup .popup-content {
+    left: 35%;
+  }
 } 
 
 @media (max-width: 895px) and (min-width: 700px) {
@@ -1676,6 +1682,9 @@ h2 {
   }
   .sobre .content .title {
     font-size:2rem;
+  }
+  #popup .popup-content {
+    left: 30%;
   }
 } 
  
@@ -1730,7 +1739,11 @@ h2 {
   
   .sobre .content .title {
     font-size:2rem;
-  }  
+  }    
+  
+  #popup .popup-content {
+    left: 30%;
+  }
 }
 
 @media (max-width: 650px) {
@@ -1739,7 +1752,9 @@ h2 {
     height: 70vh;  
     object-fit: contain; 
   }
-   
+  #popup .popup-content {
+    left: 25%;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1777,8 +1792,6 @@ h2 {
     height: 25vh;  
   }
 
-
-  
   .project-section, .sector-section, .comp-section {
     display: flex;
     flex-direction: column;
@@ -1810,7 +1823,9 @@ h2 {
     width: 100%;
     text-align: center;
   }
- 
+  #popup .popup-content {
+    left: 25%;
+  }
 }
 
 @media (max-width: 500px) {
@@ -1859,8 +1874,9 @@ h2 {
   .timeline-container {
     position: relative; 
   }
- 
-
+  #popup .popup-content {
+    left: 18%;
+  }
 }
 
 
@@ -1898,7 +1914,9 @@ h2 {
   .inicio .cloud {
     height: 25vh;  
   } 
-
+  #popup .popup-content {
+    left: 15%;
+  }
 }
 
 

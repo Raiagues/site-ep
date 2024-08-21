@@ -322,7 +322,7 @@ function sendEmail(event) {
   emailjs.send("service_ubzp5kb", "template_pez9ddl", params)
       .then(function (res) {
           showPopup("Sua mensagem foi enviada com sucesso!");
-          form.reset(); // Clear all form fields
+          form.reset(); 
       })
       .catch(function (err) {
           showPopup("Falha ao enviar a mensagem: " + err.text);
@@ -331,7 +331,7 @@ function sendEmail(event) {
 
 function showPopup(message) {
   document.getElementById("popup-message").textContent = message;
-  document.getElementById("popup").style.display = "block";
+  document.getElementById("popup").style.display = "flex";
 }
 
 function closePopup() {
