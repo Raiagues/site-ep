@@ -578,6 +578,10 @@ form input[type="radio"]:checked + .radio-label:hover {
   .carousel-item {
     min-height: 200px;   
     max-width: 100%;
+  } 
+  .inicio .image img:nth-of-type(1) {
+    max-width: 10% !important; 
+
   }
 }
 
@@ -601,7 +605,7 @@ form input[type="radio"]:checked + .radio-label:hover {
   .inscription-table th:nth-child(2),
   .inscription-table td:nth-child(2) {
     width: 20%;
-  }
+  }  
 }
 
 @media (max-width: 940px) {
@@ -653,12 +657,6 @@ form input[type="radio"]:checked + .radio-label:hover {
   .inicio .image img:nth-of-type(1) {
     max-width: 50%; 
   }
-  .description-event {
-    font-size: 0.8rem; 
-  }
-  .remaining-places {
-    font-size: 0.5rem;
-  }
 }
 
 @media (max-width: 480px) {
@@ -697,6 +695,6 @@ form input[type="radio"]:checked + .radio-label:hover {
   }
   .remaining-places {
     font-size: 0.4rem;
-  }
+  }  
 }
 

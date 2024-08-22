@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EP Aero - Revista Acadêmica</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/projects/minicursos.css">
+    <link rel="stylesheet" href="../../css/projects/projects.css">
+
+    <link rel="website icon" type="png" href="../../images/logo.png">
+
+</head>
+<body>
+    
+    <header class="header">   
+        <a href="#" class="logo">
+            <span>
+                <img src="../../images/header/logo.png" alt="Logo">
+            </span>
+        </a>
+
+        <nav class="navbar">
+            <a href="../../index.html#inicio">Início</a>
+            <a href="../../index.html#sobre">Sobre</a>
+            <a href="../../index.html#projetos">Projetos</a> 
+            <a href="../../pages/selecao/selecao.html#processo-seletivo">Processo Seletivo</a>
+            <a href="../../index.html#contato">Contato</a>
+        </nav>
+
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </header>
+
+    
+
+
+    <section class="instruction">
+        <div class="begin"></div>
+        <h1 class="heading">Regras para inscrições</h1>
+        <div class="instruction-container">
+            <p>Como os minicursos são gratuitos e com vagas limitadas, para permitir que o maior número possível de pessoas aproveite, temos algumas regras para as inscrições.</p>
+            <ul>
+                <li>O horário de abertura das inscrições é divulgado em nossas redes sociais e as inscrições são realizadas por ordem de chegada.</li>
+                <li>Normalmente, temos um limite de 20 a 30 alunos por turma. Assim que a turma é fechada, ainda é possível se inscrever na lista de espera.</li>
+                <li>É permitido se inscrever em até 3 turmas por pessoa, com a possibilidade de permanecer em lista de espera para mais 2 turmas.</li>
+                <li>Os inscritos recebem um e-mail de confirmação da vaga após o fim do período de inscrições. Caso o participante não responda ao e-mail de confirmação, a vaga será perdida e liberada para os inscritos na lista de espera.</li>
+                <li>Quem confirmar vaga em 3 turmas, não terá direito de entrar em lista de espera de outra turma.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="signup" id="participe">
+        <div class="section-content">
+            <h1 class="heading">Inscrição</h1>    
+            <form id="signup-form" onsubmit="handleFormSubmit(event)">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="role">Você é:</label>
+                <select id="role" name="role" onchange="showFields()">
+                    <option value="student-ufsm">Aluno da UFSM</option>
+                    <option value="student-extern">Aluno de outra instituição</option>
+                    <option value="extern">Não possui nenhum vínculo institucional</option>
+                </select>
+
+                <div id="CPF-field" style="display:block;">
+                    <label for="CPF">CPF:</label>
+                    <input type="text" id="CPF" name="CPF">
+                </div>
+
+                <div id="inst-field" style="display:none;">
+                    <label for="inst">Nome da instituição:</label>
+                    <input type="text" id="inst" name="inst">
+                </div>
+
+                <div id="curso-field" style="display:block;">
+                <label for="curso">Curso:</label>
+                <select id="curso" name="curso" onchange="showOtherCourseField()">
+                    <option value="Engenharia Aeroespacial">Engenharia Aeroespacial</option>
+                    <option value="Engenharia Elétrica">Engenharia Elétrica</option>
+                    <option value="Engenharia Mecânica">Engenharia Mecânica</option>
+                    <option value="Engenharia Computação">Engenharia da Computação</option>
+                    <option value="Ciência da Computação">Ciência da Computação</option>
+                    <option value="Outro">Outro</option>
+                </select>
+                <div id="other-course-field" style="display:none;">
+                    <label for="other-course">Especifique:</label>
+                    <input type="text" id="other-course" name="other-course">
+                </div>
+                </div>
+
+                <div id="field-field" style="display:none;">
+                    <label for="field">Cargo Atual:</label>
+                    <input type="text" id="field" name="field">
+                </div>
+            
+                <div id="age-field" style="display:block;">
+                    <label for="age">Idade:</label>
+                    <select id="age" name="age">
+                        <option value="Menos de 20">Menos de 20</option>
+                        <option value="20-25">20-25</option>
+                        <option value="25-30">25-30</option>
+                        <option value="30-40">30-40</option>
+                        <option value="Mais de 40">40+</option>
+                    </select>
+                </div>
+
+                <div id="calendar"></div>
+
+
+                <div class="centered-form">
+                    <label>
+                        <input type="radio" name="event-type" value="official" checked>
+                        <span class="radio-label">Escolha Principal</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="event-type" value="waitlist">
+                        <span class="radio-label">Lista de Espera</span>
+                    </label>
+                </div>
+
+                <div class="centered-details">
+                    <h2>Minicursos Selecionados</h2>
+                    <table id="meeting-details">
+                        <thead>
+                        <tr>
+                            <th>Escolhas Principais</th>
+                            <th>Lista de Espera</th>
+                        </tr>
+                        </thead>
+                        <tbody id="event-details-body">
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div id="popup">
+                    <div class="popup-content">
+                    <span class="popup-close" onclick="closePopup()">&times;</span>
+                    <p id="popup-message"></p>
+                    </div>
+                </div>
+
+                <button type="submit">Enviar</button>
+
+            </form>
+        </div>
+    </section>
+
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup()">&times;</span>
+            <p id="popup-message">Sua mensagem foi enviada com sucesso!</p>
+        </div>
+    </div>
+
+
+    <section id="result-section">
+        <div class="section-content">
+            <h1 class="heading">Controle de Inscrições</h1>    
+            <p>TODO: mostrar tabela apenas para usuários administradores.</p>
+            <div class="scrollable-table-container">
+                <table class="inscription-table" id="inscription-table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>Você é</th>
+                            <th>CPF</th>
+                            <th>Nome da Instituição</th>
+                            <th>Curso</th>
+                            <th>Idade</th>
+                            <th>Escolhas Principais</th>
+                            <th>Lista de Espera</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inscription-table-body">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    
+ 
+    
+
+
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>REDES SOCIAIS:</h3>
+                <a href="https://www.instagram.com/ep.aero/"> <i class="fab fa-instagram"></i> instagram </a>
+                <a href="https://www.linkedin.com/company/escola-piloto-de-engenharia-aeroespacial-ufsm/"> <i class="fab fa-linkedin"></i> linkedin </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="../../js/script.js"></script>
+    <script src="../../js/projects/ingles.js"></script>
+    <script src="../../js/projects/project.js"></script>
+</body>
+</html>

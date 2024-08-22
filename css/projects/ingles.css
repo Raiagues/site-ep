@@ -174,48 +174,84 @@
 
 @media (min-width: 1800px) {
   .carousel-item {
-    min-height: 200px;   
+    min-height: 250px;   
+    max-width: 100%;
+  }
+  .inicio .image img {
+    max-width: 100%;  
+    height: auto; 
+  }
+  .inicio .image img:nth-of-type(1) {
+    max-width: 100%;  
+  }
+}
+
+@media (min-width: 1400px) {
+  .carousel-item {
+    min-height: 250px;   
     max-width: 100%;
   }
 }
 
+@media (min-width: 900px) and (max-width: 1400px) {
+  .carousel-item {
+    min-width: 50%;  
+    max-width: 100%;
+    height: 80%; 
+  }
+  .inicio .image img {
+    max-width: 90%;  
+    height: auto; 
+  }
+  .inicio .image img:nth-of-type(1) {
+    max-width: 75%;  
+  }
+}
+
+
 @media (max-width: 1024px) {
   .carousel-item {
-    min-width: 40%; 
-  }  
+    min-width: 55%;  
+    max-width: 100%;
+    height: 80%; 
+  }
 }
 
 @media (max-width: 940px) {
   .carousel-item {
-    min-width: 45%;  
+    min-width: 65%;  
     max-width: 100%;
-  }  
+    height: 80%; 
+  }
   .inicio .image img {
     max-width: 90%; 
     height: auto; 
   }
   .inicio .image img:nth-of-type(1) {
-    max-width: 50%; 
+    max-width: 65%;  
   }
 }
 
 @media (max-width: 800px) {
   .carousel-item {
-    min-width: 50%; 
+    min-width: 65%;  
+    max-width: 100%;
+    height: 50%; 
   }
 }
 
 @media (max-width: 768px) {
   .carousel-item {
-    min-width: 80%;  
+    min-width: 85%;  
     max-width: 100%;
+    height: 50%; 
   }
   .inicio .image img {
     max-width: 90%; 
     height: auto; 
   }
   .inicio .image img:nth-of-type(1) {
-    max-width: 50%; 
+    max-width: 55%; 
   }  
   .carousel-item p {
     font-size: 1.rem;
@@ -224,8 +260,9 @@
 
 @media (max-width: 480px) {
   .carousel-item {
-    min-width: 70%;  
+    min-width: 85%;  
     max-width: 100%;
+    height: 50%; 
   }
   .inicio .image img {
     max-width: 90%; 
@@ -234,8 +271,5 @@
   .inicio .image img:nth-of-type(1) {
     max-width: 50%; 
   }
-
-  
-
 }
 
